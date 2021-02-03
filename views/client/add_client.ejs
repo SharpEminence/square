@@ -1,0 +1,121 @@
+
+<div class="content-wrapper">
+  <!-- Page Title Header Starts-->
+  <div class="headerTitle">
+      <h2>Add Client</h2>    
+      <% if(typeof errors !== 'undefined' && typeof errors.message !== 'undefined') { %>
+        <p class = "alert alert-danger ml15 mr15 text-center"><%- errors.message %></p>
+     <% } %>  
+     <% if(typeof errors !== 'undefined' && typeof errors.msg !== 'undefined') { %>
+        <p class = "alert alert-success ml15 mr15 text-center"><%- errors.msg %></p>
+     <% } %>
+  </div>
+  <!-- Page Title Header Ends-->
+  <form class="forms-sample"  action="/clientpost" method="post" >
+<div class="midContentRightBar">
+    <div class="meddleContentSec addClientBlock">
+      <div class="eventInfoBox">
+          <div class="infoBoxContent">
+              <div class="boxContentRow">
+                  <span class="infoTitle">Company Name</span>
+                  <div class="infoBoxData">
+                      <input type="text" class="form-control"  name="company_name" value="<%=formdata['company_name'] %>" id="company_name" placeholder="Enter company name">
+                      <% if(typeof errors !== 'undefined' && typeof errors.company_name !== 'undefined') { %>
+                        <p class = "error"><%- errors["company_name"] %></p>
+                    <% } %> 
+                  </div>
+              </div>
+              <div class="boxContentRow">
+                  <span class="infoTitle">Contact Person Name</span>
+                  <div class="infoBoxData">
+                      <input type="text" class="form-control" name="person_name" value="<%=formdata['person_name'] %>" id="person_name" placeholder="Enter contact person name">
+                      <% if(typeof errors !== 'undefined' && typeof errors.person_name !== 'undefined') { %>
+                        <p class = "error"><%- errors["person_name"] %></p>
+                    <% } %> 
+                  </div>
+              </div>
+              <div class="boxContentRow">
+                  <span class="infoTitle">Email</span>
+                  <div class="infoBoxData">
+                      <input type="email" class="form-control" id="" name="email" value="<%=formdata['email'] %>" id="email" placeholder="Enter email">
+                      <% if(typeof errors !== 'undefined' && typeof errors.email !== 'undefined') { %>
+                        <p class = "error"><%- errors["email"] %></p>
+                    <% } %> 
+                  </div>
+              </div>
+              <div class="boxContentRow">
+                  <span class="infoTitle">Phone</span>
+                  <div class="infoBoxData">
+                      <input type="text" class="form-control"  name="mobile_number" value="<%=formdata['mobile_number'] %>" id="mobile_number" placeholder="Enter contact number">
+                      <% if(typeof errors !== 'undefined' && typeof errors.mobile_number !== 'undefined') { %>
+                        <p class = "error"><%- errors["mobile_number"] %></p>
+                    <% } %> 
+                  </div>
+              </div>
+              <div class="boxContentRow">
+                  <span class="infoTitle">Address</span>
+                  <div class="infoBoxData">
+                      <input type="text" class="form-control" name="address" value="<%=formdata['address'] %>" id="address" placeholder="Enter address">
+                      <% if(typeof errors !== 'undefined' && typeof errors.address !== 'undefined') { %>
+                        <p class = "error"><%- errors["address"] %></p>
+                    <% } %> 
+                  </div>
+              </div>
+          </div>
+      </div>
+      <div class="eventInfoBox">
+          <div class="infoBoxTitle">
+              <h3>Client Bio</h3>
+          </div>
+          <div class="infoBoxContent">
+              <div class="boxContentTextArea">
+                  <div class="infoBoxData">
+                      <textarea class="form-control" rows="7" name="description" value="" id="description" placeholder="write client bio here"><%=formdata['description'] %></textarea>
+                      <% if(typeof errors !== 'undefined' && typeof errors.description !== 'undefined') { %>
+                        <p class = "error"><%- errors["description"] %></p>
+                    <% } %> 
+                  </div>
+              </div>
+          </div>
+      </div>
+      <!-- Add Images section -->
+        <div class="addEventImgSec">
+          <div class="infoBoxTitle">
+              <h3>Add Logo</h3>
+          </div>
+            <div class="addEventImg">
+                <div class="addEvntImgColl addEvntImg">
+                  <div class="addEImg">
+                      <input type="file" id="myFile" class="upload-img" name="logo"  accept="image/*"> 
+                      <input type="hidden" class="image_upload" name="image_data" value="">
+                      <div class="addNewEvntImg">
+                          <h4>Add Logo</h4>
+                          <img src="/assets/images/navIcon/addImg.png" />
+                      </div>
+                     
+                  </div>
+                </div>
+                <div class="addEvntImgColl clientLogoAdd">
+                  <div class="updateEventImg">
+                      <img class="display_img" src="/uploads/user.png" />
+                      <!-- <span class="itemTrash"><img src="../assets/images/navIcon/trash.png" /></span> -->
+                  </div>
+                </div>
+                <% if(typeof errors !== 'undefined' && typeof errors.image_data !== 'undefined') { %>
+                  <p class = "error"><%- errors["image_data"] %></p>
+              <% } %> 
+            </div>
+        </div>
+    <!-- End Images section -->
+    <!-- Submit Button -->
+    <div class="adminSubmitBtn">
+        <button type="submit" class="btn btn-primary adminPageBtn">Add Client</button>
+    </div>
+    <!-- Submit Button -->
+    </div>
+</div>
+</form>
+</div>
+
+      <!-- content-wrapper ends -->
+

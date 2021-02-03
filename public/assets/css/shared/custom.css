@@ -1,0 +1,1711 @@
+/*! =========================================================
+ *
+Custom Css Virtual Event Management 
+ 
+*
+* =========================================================
+*
+* MIT License Copyright 2017 Creative Tim (http://www.creative-tim.com/product/material-bootstrap-wizard)
+ *
+ *                       _oo0oo_
+ *                      o8888888o
+ *                      88" . "88
+ *                      (| -_- |)
+ *                      0\  =  /0
+ *                    ___/`---'\___
+ *                  .' \|     |// '.
+ *                 / \|||  :  |||// \
+ *                / _||||| -:- |||||- \
+ *               |   | \  -  /// |   |
+ *               | \_|  ''\---/''  |_/ |
+ *               \  .-\__  '-'  ___/-. /
+ *             ___'. .'  /--.--\  `. .'___
+ *          ."" '<  `.___\_<|>_/___.' >' "".
+ *         | | :  `- \`.;`\ _ /`;.`/ - ` : | |
+ *         \  \ `_.   \_ __\ /__ _/   .-` /  /
+ *     =====`-.____`.___ \_____/___.-`___.-'=====
+ *                       `=---='
+ *
+ *     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ *
+ *               Buddha Bless:  "No Bugs"
+ *
+ * ========================================================= */
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+body, input, select, textarea, button, a{font-family: 'Montserrat', sans-serif !important;}
+h1, h2, h3, h4, h5, h6, p, ul, li, table, th, td{font-family: 'Montserrat', sans-serif !important; margin: 0; padding: 0;}
+
+.btn-primary:not(:disabled):not(.disabled):active:focus{
+    -webkit-box-shadow: none !important;
+    box-shadow: none !important;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #d2d2d2;
+  outline: 1px solid #d2d2d2;
+}
+::-webkit-scrollbar {
+  width: 5px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #d2d2d2;
+  outline: 1px solid #d2d2d2;
+} 
+
+nav.navbar.adminMainHeader .adminLogo, nav.navbar.adminMainHeader .adimnHeader {
+    background: #3ea0f4;
+    box-shadow: none;
+} 
+nav.navbar.adminMainHeader .adminLogo {
+    width: 225px;
+}
+.adminContentArea .main-panel, .adminContentArea .adminMainHeader .adimnHeader {
+    width: calc(100% - 225px) !important;
+}
+.leftSideBarColl button.openbtn {
+    background: transparent;
+    padding: 0;
+    border: 0;
+}
+li.eventNav {
+    display: none;
+}
+span.leftSideBarColl {
+    display: none;
+}
+.adimnHeader ul.navbar-nav a#UserDropdown {
+    padding: 0;
+}
+.adminMainHeader .adimnHeader, .adminMainHeader .adminLogo {
+    height: 52px !important;
+}
+.adminContentArea .navbar.fixed-top + .page-body-wrapper {
+    padding-top: 52px;
+}
+/*===== Left SideBar =====*/
+nav#mySidepanel.leftBarOpen ul.nav.leftNavOuter span.menu-title {
+    font-size: 0;
+    margin: 0;
+}
+nav#mySidepanel.adminLeftSidebar ul.leftNavOuter {
+    position: fixed;
+    min-width: 225px;
+    margin-top: 30px;
+}
+nav#mySidepanel.adminLeftSidebar ul.leftNavOuter a {
+    padding-right: 0;
+    color: #4a494a;
+    padding-left: 25px;
+    min-height: 49px;
+    background: #fafbfa;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    height: auto;
+}
+nav#mySidepanel.adminLeftSidebar ul.leftNavOuter a .menu-title {
+    font-weight: 500;
+    text-transform: uppercase;
+    margin-left: 10px;
+    color: #4a494a;
+}
+nav#mySidepanel.adminLeftSidebar ul.leftNavOuter a:before {
+    content: none;
+}
+nav#mySidepanel.adminLeftSidebar {
+    width: 225px;
+    background: #fff;
+    box-shadow: 0 0 4px 1px #e0e0e0;
+}
+nav#mySidepanel.adminLeftSidebar ul.leftNavOuter a:hover {
+    background: #ededed;
+}
+nav#mySidepanel.adminLeftSidebar ul.leftNavOuter li {
+    margin-bottom: 10px;
+}
+nav#mySidepanel.adminLeftSidebar ul.leftNavOuter li.active a {
+    border-left: 5px solid #3ea0f4;
+    padding-left: 20px;
+    background: #eaeaea;
+}
+nav#mySidepanel.adminLeftSidebar.leftBarOpen, nav#mySidepanel.leftBarOpen ul.nav.leftNavOuter {
+    min-width: 70px;
+    width: 70px;
+}
+.leftBarOpen + .adminContentArea {
+    width: calc(100% - 70px) !important;
+}
+.adimnHeader .navbar-nav span.adminName {
+    color: #fff;
+    font-size: 14px;
+    margin-right: 10px;
+    font-weight: 500;    
+}
+.adimnHeader .navbar-nav .nav-item.dropdown .dropdown-toggle:after {
+    border: none;
+    content: "\F140";
+    font-family: "Material Design Icons";
+    font-size: 20px;
+    color: white;
+    text-rendering: auto;
+    line-height: inherit;
+    vertical-align: 0;
+}
+.adminContentArea .content-wrapper {
+    padding: 20px;
+    background: #f6f6f5;
+}
+.headerTitle h2 {
+    margin: 0;
+    background: #fff;
+    font-size: 16px;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #3ea0f4;
+    letter-spacing: 1px;
+    padding: 16px 20px;
+    box-shadow: 0 0 4px 1px #f3f3f3;
+}
+.backIcon {
+    margin-bottom: 25px;
+}
+.eventInfoBox {
+    margin-top: 30px;
+}
+.infoBoxTitle h3 {
+    background: #e9e9e9;
+    color: #4a494a;
+    font-size: 15px;
+    margin: 0;
+    font-weight: 600;
+    padding: 15px 20px;
+}
+.infoBoxContent {
+    background: #fff;
+    padding: 20px;
+    box-shadow: 0px 2px 4px 2px #ececec;
+}
+.boxContentRow {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    /*height: 37px;*/
+}
+.boxContentRow:last-child {
+    margin-bottom: 0;
+}
+.boxContentRow .infoBoxData .tagsinput {
+    padding: 0;
+}
+.boxContentRow .infoBoxData .tagsinput #form-tags-1_addTag {
+    border: 1px solid #eee;
+    padding: 4px 12px;
+}
+.boxContentRow span.infoTitle {
+    font-size: 14px;
+    font-weight: 500;
+    color: #4a494a;
+    letter-spacing: 0.60px;
+    min-width: 140px;    
+}
+.boxContentRow .infoBoxData .tagsinput #form-tags-1_addTag input.tag-input {
+    margin: 0;
+    min-height: 28px;
+}
+.boxContentRow .infoBoxData {
+    margin: 0;
+    color: #4a494a;
+    font-size: 14px;
+    letter-spacing: 0.60px;
+    position: relative;
+    width: 390px;
+    display: block;
+    text-align: right;
+    background: #fff;
+    z-index: 1;
+}
+.boxContentRow .infoBoxData .form-control:disabled {
+    background: #f7f7f7;
+    cursor: not-allowed;
+}
+.infoBoxData input.form-control, .infoBoxData textarea.form-control, .infoBoxData select.form-control {
+    text-align: right;
+    font-size: 14px;
+    color: #4a494a;
+    letter-spacing: 0.60px;
+    font-weight: 400;
+    line-height: 18px;
+    background: transparent;
+    padding: 8px;
+    border: 1px solid #eee;
+    min-width: 390px;
+}
+.infoBoxData select.form-control {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    text-align-last: right;
+    background: transparent;
+    color: #4a494a;
+    padding-left: 20px;
+}
+.infoSelectBox select.form-control {
+    width: 390px;
+    -webkit-appearance: none;
+   -moz-appearance: none;
+    appearance: none;
+    text-align-last: right;
+    background: transparent;
+    color: #4a494a;  
+    padding-left: 20px;    
+}
+.infoSelectBox select.form-control, .infoSelectBox select.form-control option{
+    text-align: right;
+}
+.infoSelectBox select.form-control {
+    background: transparent;
+}
+.infoSelectBox {
+    position: relative;
+}
+.infoSelectBox:before {
+    content: "";
+    background: url(../../../assets/images/navIcon/dropDownArrow.png);
+    position: absolute;
+    width: 13px;
+    height: 10px;
+    border: 0px solid;
+    top: 14px;
+    left: 10px;
+    z-index: -1;
+}
+.boxContentRow .form-group {
+    margin-bottom: 0;
+}
+.infoBoxData input.form-control::placeholder, .infoBoxContent .boxContentTextArea textarea.form-control::placeholder {
+    color: #c3c1c3;
+    letter-spacing: 0.60px;
+    font-weight: 300;
+}
+.infoBoxData input.form-control{width: 390px;}
+.adminContentArea .meddleContentSec {
+    width: 788px;
+    padding-right: 20px;
+}
+.infoBoxContent .boxContentTextArea textarea.form-control {
+    text-align: left;
+    line-height: 24px;
+}
+.boxContentTextArea .infoBoxData {
+    margin: 0;
+    line-height: 29px;
+    font-size: 14px;
+}
+.addEventImgSec {
+    margin-top: 30px;
+}
+.addEventImg {
+    background: #fff;
+    padding: 10px 10px;
+    display: -webkit-box;      /* OLD - iOS 6-, Safari 3.1-6 */
+    display: -moz-box;         /* OLD - Firefox 19- (buggy but mostly works) */
+    display: -ms-flexbox;      /* TWEENER - IE 10 */
+    display: -webkit-flex;
+    display: flex;
+    box-shadow: 0px 2px 4px 2px #ececec;
+    flex-wrap: wrap;    
+}
+.addNewsLogo{
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    flex-wrap: wrap;
+    box-shadow: none;
+    padding: 0;
+}
+.addEventLogoBox {
+    background: #fff;
+    padding: 10px 10px;
+    box-shadow: 0px 2px 4px 2px #ececec;
+}
+.addEventvideo {
+    display: -webkit-box;      /* OLD - iOS 6-, Safari 3.1-6 */
+    display: -moz-box;         /* OLD - Firefox 19- (buggy but mostly works) */
+    display: -ms-flexbox;      /* TWEENER - IE 10 */
+    display: -webkit-flex;
+    display: flex;
+    background: #fff;
+    padding: 20px 10px;
+}
+.addEImg input#myFile {
+    position: absolute;
+    opacity: 0;
+    height: 100%;
+}
+
+.addEvntImg .addEImg {
+    background: #ececec;
+    height: 150px;
+    position: relative;
+    padding: 12px;
+    overflow: hidden;
+}
+.addEventImg .addEvntImgColl {
+    width: 25%;
+    padding: 0 10px;
+    margin: 10px 0;    
+}
+.updateEventImg {
+    position: relative;
+    border: 1px solid #eee;   
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.addEvntImg .addEImg .addNewEvntImg {
+    height: 100%;
+    border: 3px dotted #c3c3c3;
+    border-radius: 25px;
+    text-align: center;
+    display: -webkit-box;      /* OLD - iOS 6-, Safari 3.1-6 */
+    display: -moz-box;         /* OLD - Firefox 19- (buggy but mostly works) */
+    display: -ms-flexbox;      /* TWEENER - IE 10 */
+    display: -webkit-flex;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+.addNewEvntImg img {
+    width: 45px;
+}
+.addEventImg .updateEventImg img {
+    width: 100%;
+    object-fit: cover;
+    height: 150px;
+}
+.addEventImg .agendaImageUpdated {
+    width: 200px;
+}
+.addEventImg .agendaImageUpdated .updateEventImg img.display_img {
+    width: 150px;
+}
+.addSpeakerSec .addSpeakerImg .addEvntImgColl.agendaImageUpdated {
+    width: 200px;
+}
+.addEventImg .updateEventImg img.display_img {
+    /*width: 150px;*/
+}
+.addEventImg .adminSpeakerImage img {
+    width: 200px;
+    height: 150px;
+}
+.addNewEvntImg h4 {
+    font-size: 15px;
+    color: #7b7b7b;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+.addEventVideoSec {
+    display: -webkit-box;      /* OLD - iOS 6-, Safari 3.1-6 */
+    display: -moz-box;         /* OLD - Firefox 19- (buggy but mostly works) */
+    display: -ms-flexbox;      /* TWEENER - IE 10 */
+    display: -webkit-flex;
+    display: flex;
+    position: relative;
+    height: 100%;
+}
+.addEventVideoSec video.eventVideo {
+    width: 100%;
+    object-fit: cover;
+}
+.playpause {
+    background-image: url(../../../assets/images/navIcon/playButton.png);
+    background-repeat: no-repeat;
+    position: absolute;
+    background-size: contain;
+    background-position: center;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
+    width: 60px;
+    height: 60px;
+    background-color: transparent;
+    border: 0;
+}
+span.itemTrash {
+    position: absolute;
+    bottom: 5px;
+    right: 5px;
+    display: flex;
+    width: 20px;
+    height: 20px;
+    background: rgba(0,0,0,0.6);
+    text-align: center;
+    padding: 2px 2px;
+    cursor: pointer;    
+}
+.addEventImgSec span.itemTrash img {
+    width: 14px;
+    object-fit: contain; 
+    height: 15px;    
+}
+.adminSubmitBtn .adminPageBtn {
+    background: #3ea0f4;
+    font-size: 14px;
+    font-weight: 600;
+    text-transform: uppercase;
+    padding: 15px 20px;
+    min-width: 200px;
+    border-radius: 0px;
+}
+.adminSubmitBtn {
+    margin-top: 30px;
+    margin-bottom: 10px;
+    text-align: right;
+}
+.adminSubmitBtn .adminPageBtn:hover {
+    background: #348fde;
+    border: 1px solid;
+}
+.withRightBar .content-wrapper {
+    display: flex;
+    justify-content: space-between;
+}
+.withRightBar .adiminBodyContent {
+    width: 100%;
+    padding-right: 20px;
+    min-width: 78%;
+}
+ul.rightSideNav li {
+    list-style: none;
+    display: flex;
+    justify-content: space-between; 
+    margin-bottom: 10px;
+} 
+ul.rightSideNav li:last-child {
+    margin-bottom: 0;
+}
+.rightSideBar ul.rightSideNav {
+    margin: 0;
+    padding: 0;
+}
+.rightSideNav a {
+    height: 44px;
+    display: flex;
+    align-items: center;
+    box-shadow: 0 0 3px 1px #ebebeb;
+}
+.rightIcon a {
+    width: 44px;
+    background: #fff;
+    justify-content: center;
+}
+.rightSideNav .rightMenu {
+    width: 226px;
+    margin-right: 10px;
+}
+.rightSideNav .rightMenu a {
+    background: #fff;
+    font-size: 15px;
+    color: #4a494a;
+    padding: 0 20px;
+}
+.rightSideBar {
+    min-width: 280px;
+}
+.rightSideNav a:hover {
+    text-decoration: none;
+    background: #fafbfa;
+}
+/*=== Right Side bar ===*/
+
+/*=== Start Event List Css ===*/
+.tableSearchSort {
+    display: flex;
+    justify-content: space-between;
+}
+.adminListPage {
+    margin-top: 30px;
+}
+.tableSearchSort .tableSearch {
+    min-width: 370px;
+    position: relative;    
+}
+.tableSearch input.form-control {
+    min-height: 45px;
+    font-size: 14px;
+    padding-left: 40px;
+    box-shadow: 0 0 4px 0px #e8e8e8;
+    border: 1px solid #eee;
+    color: #4a494a;    
+}
+.tableSearch input.form-control::placeholder {
+    color: #c3c1c3;
+}
+span.searchIcon {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+}
+.tableSearchSort .tableSort {
+    display: -webkit-box;      /* OLD - iOS 6-, Safari 3.1-6 */
+    display: -moz-box;         /* OLD - Firefox 19- (buggy but mostly works) */
+    display: -ms-flexbox;      /* TWEENER - IE 10 */
+    display: -webkit-flex;     /* NEW - Chrome */
+    display: flex;
+}
+.sortingBtn {
+    display: -webkit-box;      /* OLD - iOS 6-, Safari 3.1-6 */
+    display: -moz-box;         /* OLD - Firefox 19- (buggy but mostly works) */
+    display: -ms-flexbox;      /* TWEENER - IE 10 */
+    display: -webkit-flex;     /* NEW - Chrome */
+    display: flex;
+    align-items: center;    
+}
+.addEventBtn .adEventBtn {
+    background: #3ea0f4;
+    border-radius: 0;
+    min-height: 45px;
+    padding: 15px 30px;
+    font-size: 14px !important;
+    font-weight: 600;
+    color: #fff !important;
+}
+.addEventBtn {
+    padding-left: 20px;
+}
+.sortingBtn select.custom-select.form-control {
+    width: 240px;
+    border-radius: 0;
+    min-height: 45px;
+    font-size: 14px;
+    font-weight: 500;
+    color: #4a494a;
+    box-shadow: 0 0 4px 0px #e8e8e8;  
+    border: 0;    
+}
+.sortingBtn select.custom-select.form-control:focus {
+    border: 1px solid #eee;
+    box-shadow: 0 0 4px 0px #e8e8e8;
+}
+.sortingBtn span.showEntry {
+    font-size: 14px;
+    margin-right: 10px;
+    color: #4a494a;
+    font-weight: 500;
+}
+.adminTableContent {
+    margin-top: 30px;
+    background: #fff;
+    box-shadow: 0px 2px 4px 2px #ececec;    
+}
+.adminTableContent table.table thead {
+    background: #3ea0f4;
+}
+.adminTableContent table.table thead th {
+    color: #fff;
+    font-size: 14px;
+    font-weight: 600;
+    padding: 15px 12px;
+    height: 45px;
+    min-width: 110px;
+}
+.adminTableContent table.table thead th:first-child {
+    min-width: auto;
+}
+.adminTableContent table.table thead th:focus {
+    box-shadow: none;
+    outline: none;
+}
+.adminTableContent table.table tbody td {
+    font-size: 13px;
+    font-weight: 500;
+    padding: 7px 12px;
+    color: #4a494a;
+    border: 0;
+    word-break: break-all;
+    white-space: normal;
+    line-height: 22px;
+    vertical-align: top;
+}
+.adminTableContent table.table tbody tr:nth-child(2n+2) {
+    background: #f9f9f9;
+}
+.adminTableContent table.dataTable.dtr-inline.collapsed>tbody>tr.parent>td.dtr-control:before, .adminTableContent table.dataTable.dtr-inline.collapsed>tbody>tr.parent>th.dtr-control:before {
+    content: '-';
+    background-color: #2d81ca;
+}
+.showEntey p {
+    margin: 0;
+    font-size: 13px;
+    color: #4a494a;
+}
+.listShowPgination {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 10px;
+}
+.listShowPgination .tablePagination .page-item a {
+    border: 0;
+    font-size: 13px;
+    color: #4a494a;
+    font-weight: 500;
+}
+.tablePagination ul.pagination {
+    margin: 0;
+    border-bottom: 2px solid #ececec;
+    border-radius: 0;
+    padding-bottom: 6px;
+}
+.listShowPgination .tablePagination .page-item.active a {
+    background: #3ea0f4;
+    color: #fff;
+    font-weight: 600;
+}
+.adminTableContent table.table {
+    border-bottom: 1px solid #e1e1e1;
+}
+.adminTableContent table.table thead th:last-child {
+    text-align: center;
+}
+.actionEdit i {
+    color: #3ea0f4;
+}
+.actionDelete i {
+    color: #c10b0b;
+}
+span.actionEdit i {
+    font-size: 15px;
+}
+.tableEditDelete {
+    text-align: center;
+}
+.tableEditDelete span {
+    padding: 0 4px;
+}
+.adminTableContent table.table thead th:first-child, .adminTableContent table.table tbody td:first-child {
+    width: 66px;
+    text-align: center;
+    font-weight: 600;    
+}
+/*=== End Event List Css ===*/
+/*=== Start speaker Page css ===*/
+.speakerCalender i {
+    color: #c3c1c3;
+}
+.eventInfoBox hr {
+    border-color: #f0f0f0;
+}
+.addSpeakerSec .addSpeakerImg .addEvntImgColl {
+    width: 35%;
+}
+.rightSideNav .active a {
+    background: #f8f8f8;
+}
+.calIcon {
+    position: relative;
+    padding-right: 25px;    
+}
+.calIcon span.speakerCalender {
+    position: absolute;
+    top: 6px;
+    right: 0;
+}
+/*=== End speaker Page css ===*/
+/*=== Start Agenda Page css ===*/
+.chooseSpeaker .boxContentRow {
+    width: 100%;
+    margin-bottom: 0;
+}
+.chooseSpeaker {
+    padding: 15px 20px 15px;
+}
+.chooseSpeaker .infoBoxData {
+    width: 100%;
+}
+.chooseSpeaker .infoBoxData input.form-control {
+    width: 100%;
+    text-align: left;
+}
+.addDocumentRow .uoloadDocumentsSec {
+    width: 75%;
+    display: flex;
+    flex-wrap: wrap;    
+}
+.documentText h4 {
+    font-size: 12px;
+    color: #434343;
+    font-weight: 500;
+    margin-bottom: 3px;
+    white-space: normal;
+}
+.addDocumentRow .uoloadDocumentsSec .documentUpdate {
+    display: flex;
+    background: #f9f9f9;
+    border: 1px solid #eeeeee;
+    position: relative;  
+    padding: 10px; 
+}
+.uoloadDocumentsSec .downDelete {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+}
+.uoloadDocumentsSec .downDelete {
+    position: absolute;
+    right: 11px;
+    bottom: 3px;
+}
+.documentText p {
+    margin: 0;
+    color: #a5a5a5;
+    font-size: 13px;
+}
+.documentText {
+    padding-left: 20px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+.fileDownload i {
+    color: #626262;
+    font-size: 17px;
+}
+.fileDelete i {
+    color: #db1313;
+}
+span.fileDownload {
+    margin-right: 10px;
+}
+.uoloadDocumentsSec .filesupload {
+    width: 50%;
+    height: min-content;
+    margin: 0 0px 10px;
+    padding: 0 10px;
+}
+.documentText span.fileData {
+    margin-left: 20px;
+}
+.uoloadDocumentsSec .filesuploadRow {
+    display: flex;
+    width: 100%;
+    margin: 10px 0;
+    flex-wrap: wrap;
+}
+.uoloadDocumentsSec .filesuploadRow:first-child {
+    margin-top: 0;
+}
+.uoloadDocumentsSec .filesuploadRow:last-child {
+    margin-bottom: 0;
+}
+.addDocumentRow .addEvntImg {
+    /*height: 166px;*/
+}
+.addDocumentRow .addEvntImg {
+    margin: 0;
+}
+.addDocumentRow {
+    padding: 20px 10px;
+}
+.editSessionBlock .meddleContentSec {
+    width: 100%;
+    padding-right: 0;
+}
+.editSessionBlock .meddleContentSec input.form-control {
+    width: 570px;
+}
+/*=== End Agenda Page css ===*/
+/*=== Start add Client Page css ===*/
+.addClientBlock .addEventImgSec .addEventImg .addEvntImgColl {
+    width: 35%;
+}
+.addClientBlock .addEventImgSec .addEventImg .clientLogoAdd {
+    width: 200px;
+}
+.addClientBlock .addEventImgSec .addEventImg .clientLogoAdd img.display_img {
+    object-fit: contain;
+}
+/*=== End add Client Page css ===*/
+/*=== Start Poll quiestion Page css ===*/
+.pollQuestionRow .pollQuestion {
+    display: flex;
+    justify-content: space-between;  
+    align-items: center;   
+    margin-bottom: 20px;    
+}
+.pollQuestionRow .pollQuestion input.form-control {
+    width: 100%;
+    text-align: left;
+    border: 1px solid #e1e1e1;
+    min-height: 45px;
+    background: #f7f7f7;
+    padding: 0 15px;
+}
+.pollQuestionRow .pollQuestion .infoBoxData {
+    width: 100%;
+    padding-right: 0px;
+}
+.pollQuestionRow span.infoTitle {
+    display: block;
+    margin-bottom: 10px;
+    font-size: 14px;
+    font-weight: 400;
+}
+.addOption .addOptionBtn {
+    background: #eaeaea;
+    border: 1px solid #eaeaea;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 0;    
+}
+.addOption .addOptionBtn:focus, .addOption .addOptionBtn:active {
+    box-shadow: none !important;
+    background: #dadada !important;
+    border: 1px solid #bbbbbb !important;
+}
+.pollQuestionRow .pollQuestion:last-child .infoBoxData {
+    padding-right: 30px;
+}
+.repeatPollQuestion .repeatPollOpt {
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: #6eb8f8;
+    border: 1px solid #6eb8f8;
+}
+.pollQuestionBlock .infoBoxContent {
+    position: relative;
+    margin-bottom: 20px;    
+}
+.repeatPollQuestion {
+    position: absolute;
+    right: -80px;
+    bottom: 0;
+}
+.pollQuestionBlock .pollQuestionRow {
+    position: relative;
+    padding-right: 50px;    
+}
+.pollQuestionBlock .pollQuestionRow .addOption {
+    position: absolute;
+    right: 0;
+    bottom: 4px;
+}
+.pollQuestionBlock .eventInfoBox {
+    position: relative;
+}
+/*=== End Poll quiestion Page css ===*/
+/*=== Start signup quiestion Page css ===*/
+.signupQuestionBlock {
+    position: relative;
+}
+.signupQuestionBlock .boxContentRow {
+    border-bottom: 1px solid #eeeeee;
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+}
+.signupQuestionBlock .singupWriteQuestion .pollQuestion:last-child .infoBoxData {
+    padding-right: 0;
+}
+.signupQuestionBlock .infoBoxContent {
+    margin-bottom: 20px;
+}
+.singupWriteOption {
+    position: relative;
+    padding-right: 55px;    
+}
+.singupWriteOption .addOption {
+    position: absolute;
+    right: 0;
+    bottom: 7px;
+}
+.meddleContentSec .addOptionBtn:hover {
+    background: #dedede;
+    border-color: #dedede;
+}
+/*=== End signup quiestion Page css ===*/
+/*=== Start Help Desk Page css ===*/
+.helpChatSec {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+}
+.helpChatSec .helpChatRight {
+    min-width: 305px;
+    background: #f5faff;
+    box-shadow: 0px 1px 4px 1px #e0e0e0;
+}
+.helpChatSec .helpChatLeft {
+    width: 100%;
+    padding-right: 20px;
+    min-height: calc(100vh - 173px);
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+}
+.chatingArea {
+    -ms-flex-positive: 1;
+    flex-grow: 1;
+    background: #fff;
+    box-shadow: 0px 0px 4px 1px #e0e0e0;  
+    height: calc(100vh - 450px);    
+}
+.receiverMassage .messangerText {
+    padding-right: 10px;
+}
+.chatPersonName h2 {
+    background: #3ea0f4;
+    color: #fff;
+    font-size: 14px;
+    padding: 15px 20px;
+    font-weight: 600;
+    margin-bottom: 0;    
+}
+.writeMessageBox {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    background: #fff;
+    padding: 20px;
+    border: 1px solid #e5e5e5;
+    border-radius: 6px;
+    align-items: center; 
+    margin-top: 20px;
+}
+.writeMessageBox .addFileMsg {
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 45px;
+    margin-right: 20px;
+}
+.writeMessageBox .addFileMsg input#contentMsgUplaod {
+    position: absolute;
+    opacity: 0;
+    left: 0;
+}
+.messageTypeing .form-group {
+    margin: 0;
+    display: flex;
+    height: 100%;
+}
+.sendBtnEmoji .msgSendBtn {
+    display: flex;
+    width: 125px;
+}
+.msgSendBtn .chatSendBtn {
+    width: 100%;
+    font-size: 16px;
+    text-transform: uppercase;
+    font-weight: 600;
+    padding: 12px 0;
+    border-radius: 6px;
+}
+.writeMessageBox .sendBtnEmoji {
+    display: flex;
+    align-items: center;   
+}
+.sendEmoji i {
+    font-size: 23px;
+    color: #919293;
+}
+.sendBtnEmoji .sendEmoji {
+    padding: 0 20px;
+}
+.writeMessageBox .messageTypeing {
+    width: 100%;
+}
+.messageTypeing .form-group textarea {
+    border: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    line-height: 22px;
+}
+.msgSendBtn .chatSendBtn i {
+    margin-right: 0;
+    margin-left: 10px;
+}
+.onlineChatSearch .form-control {
+    height: 50px;
+    font-size: 15px;
+    padding: 0 50px 0 15px;
+    border: 0;    
+}
+.onlineChatSearch span.perSearch {
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 50px;
+    width: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+input.form-control::placeholder {
+    color: #7d9ebb;
+}
+.onlineChatSearch {
+    position: relative;
+}
+.chatPersonName h4 {
+    font-size: 14px;
+    color: #252525;
+    margin-bottom: 3px;
+    font-weight: 400;    
+}
+.chatPersonName p {
+    margin-bottom: 0;
+    font-size: 12px;
+    color: #252525;
+}
+.chatPerson .chatPersonName {
+    padding-left: 10px;
+}
+.chatPerson {
+    display: flex;
+    border-bottom: 1px solid #ebf4fb;
+    padding: 15px 20px;
+    justify-content: space-between;
+    align-items: center;    
+}
+.chatPerson .chatImgName {
+    display: flex;
+}
+.commingMsg {
+    display: flex;
+}
+.chatPerson:last-child {
+    border-bottom: 0;
+}
+.onlinePersonChat .active {
+    background: #e4f1ff;
+}
+.commingMsg .activeMessage h3 {
+    margin: 0;
+    font-size: 14px;
+    font-weight: 600;
+    color: #00395d;
+}
+.commingMsg .activeMessage {
+    padding: 0 6px;
+}
+.activeChat .chatPersonName h4, .activeChat .chatPersonName p {
+    font-weight: 500;
+}
+.activeChattingSec .senderMessage {
+    display: flex;
+    align-items: flex-end;
+}
+.messangerText p {
+    font-size: 13px;
+    color: #4a494a;
+    margin-bottom: 0;
+    line-height: 21px;    
+}
+.activeChattingSec {
+    position: relative;
+    padding: 20px;    
+}
+.activeChattingSec .receiverMassage {
+    justify-content: flex-end;
+    display: flex;
+    align-items: flex-end;    
+}
+.messangerText span.MsgTime {
+    color: #878787;
+    font-size: 11px;
+}
+.senderMessage .messangerText p {
+    padding: 15px 15px;
+    background-image: linear-gradient(to right, #e4ecf4 , #f3f7fc);
+    border: 1px solid #cbd6e2;
+    border-radius: 15px;
+    border-bottom-left-radius: 0;
+}
+.activeChattingSec .messangerImg {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 20px;    
+}
+.senderMessage .messangerText {
+    padding-left: 10px;
+}
+.receiverMassage .messangerText p {
+    padding: 12px 15px;
+    background-image: linear-gradient(to right, #ededed , #dee3e7);
+    border: 1px solid #cbd6e2;
+    border-radius: 15px;
+    border-bottom-right-radius: 0;
+}
+.messangerImg img {
+    box-shadow: 0 0 3px 3px #e4e4e4;
+    border-radius: 50%;
+    object-fit: contain;
+    width: 50px;
+    height: 50px;
+}
+.receiverMassage .messangerText span.MsgTime {
+    display: block;
+    text-align: right;
+    padding-top: 5px;
+}
+.senderMessage .messangerText span.MsgTime {
+    display: block;
+    text-align: left;
+    padding-top: 5px;
+}
+.activeChattingSec .messangerText {
+    width: 70%;
+    max-width: max-content;
+}
+.activeChattingSec .messageDate {
+    display: flex;
+    align-items: center;
+}
+.activeChattingSec .messageDate hr {
+    margin: 0;
+    height: 0px;
+    width: 100%;
+}
+.activeChattingSec .messageDate h5 {
+    margin: 0;
+    font-size: 13px;
+    color: #cbc9c9;
+    padding: 0 30px;
+}
+.activeChattingSec .messageDate {
+    display: flex;
+    align-items: center;
+    margin: 10px 0 30px;
+    padding: 0 60px;
+}
+.boxscroll {
+    height: 100%;
+    width: 100%;
+    overflow: auto;
+}
+.adminChatingOnline {
+    height: calc(100vh - 295px);
+}
+.eventDataTable thead th {
+    padding: 15px 15px !important;
+}
+
+.adminTableContent .dataTables_wrapper select {
+    width: 130px !important;
+    height: 40px;
+}
+
+.adminTableContent .dataTables_wrapper .dataTables_filter input {
+    height: 40px;
+    min-width: 240px;
+}
+/*=== End Help Desk Page css ===*/
+/*=== Start Summit Quest Page css ===*/
+.summitQuestBlock .addPoints {
+    width: 130px;
+}
+.summitQuestBlock .addPoints .form-control {
+    font-size: 14px;
+    color: #4a494a;
+    letter-spacing: 0.60px;
+    font-weight: 400;
+}
+.summitQuestBlock .addPoints .form-control::placeholder {
+    color: #a0a0a0;
+}
+.summitQuestBlock .infoBoxContent {
+    margin-bottom: 20px;
+}
+.summitQuestBlock .meddleContentSec .eventInfoBox {
+    position: relative;
+}
+.summitQuestBlock .addPoints input.form-control {
+    text-align: center;
+}
+/*=== End Summit Quest Page css ===*/
+
+/*============ Start Admin Footer =========*/
+/*============ End Admin Footer =========*/
+
+.listingTable table#example ul.dtr-details {
+    display: block;
+    text-align: left;
+}
+.listingTable table#example ul.dtr-details>li:last-child {
+    display: flex;
+}
+.listingTable table#example ul.dtr-details span.dtr-data {
+    white-space: normal;
+    font-weight: 500;
+    font-size: 14px;
+}
+
+.navbar.default-layout .navbar-menu-wrapper .navbar-nav .nav-item.user-dropdown .dropdown-menu {
+    width: 250px;
+}
+.navbar.default-layout .navbar-menu-wrapper .navbar-nav .nav-item.user-dropdown .dropdown-menu p {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+} 
+
+.midContentRightBar .cc1-chat-win-msg-block .cc1-chat-win-msg-actions, .midContentRightBar .cc1-chat-win-msg-block .cc1-chat-win-msg-actions {
+    display: none !important;
+}
+.infoBoxData .dashboardcode-bsmultiselect ul.form-control li:last-child {
+    order: 1;
+    margin-right: 15px;
+}
+.infoBoxData .dashboardcode-bsmultiselect ul.form-control li.badge {
+    order: 2;
+}
+.alert-success {
+    margin-top: 10px;
+}
+
+
+/*============ Start Admin Responsive =========*/
+@media(min-width:1500px){
+.addEvntImg .addEImg {
+    height: 200px;
+}
+.updateEventImg {
+    height: 200px;
+    /*width: 200px;*/
+}
+.addEventImg .agendaImageUpdated .updateEventImg img.display_img {
+    object-fit: cover;
+    height: 160px;
+    width: 100%;
+}
+.addEventImg .updateEventImg img {
+    height: 100%;
+}
+}
+@media(min-width:1400px){
+.withRightBar .adiminBodyContent {
+    width: 100%;
+    padding-right: 20px;
+} 
+}
+@media(max-width:1299px){
+.uoloadDocumentsSec .filesupload {
+    width: 100%;
+    margin: 0;
+    padding: 0 10px;
+    margin-bottom: 10px;
+}
+.uoloadDocumentsSec .filesuploadRow {
+    flex-direction: column;
+}
+.uoloadDocumentsSec .filesuploadRow {
+    display: flex;
+    width: 100%;
+    margin: 0px 0;
+}
+.uoloadDocumentsSec .filesuploadRow:last-child .filesupload:last-child {
+    margin-bottom: 0;
+}    
+}
+@media(max-width:1250px){
+.listingTable {
+    overflow: auto;
+}
+.withRightBar .pollQuestionBlock .meddleContentSec {
+    width: 500px;
+}    
+.signupQuestonPage .meddleContentSec, .summitQuestBlock .meddleContentSec {
+    width: 600px;
+}    
+}
+@media(max-width:1200px){
+.adminContentArea .meddleContentSec {
+    width: 100%;
+    padding-right: 0px;
+} 
+.adimnHeader ul.navbar-nav .user-dropdown {
+    display: block !important;
+}    
+}
+@media(max-width:1199px){
+.signupQuestonPage .meddleContentSec, .summitQuestBlock .meddleContentSec {
+    width: 500px;
+}    
+.clientListPage .tableSearchSort .tableSearch {
+    margin-bottom: 10px;
+}
+.clientListPage .tableSearchSort {
+    flex-direction: column;
+}
+.clientListPage .tableSearchSort .tableSort {
+    justify-content: space-between;
+}    
+.addEventImg .addEvntImgColl {
+    width: 33.33%;
+}
+.addDocumentRow .addEvntImg {
+    margin: 0 0 20px;
+}
+.addDocumentRow .uoloadDocumentsSec {
+    width: 100%;
+}
+.withRightBar .adiminBodyContent {
+    width: 74%;
+} 
+.listingTable {
+    overflow-y: auto;
+}  
+.editSessionBlock .meddleContentSec input.form-control {
+    width: 376px;
+}    
+}
+@media(max-width:1050px){
+.addEventImg .addEvntImgColl {
+    width: 50%;
+}
+}
+@media(max-width:991px){
+.adminMainHeader a.brand-logo-mini {
+    padding: 0 !important;
+}
+nav#mySidepanel.adminLeftSidebar {
+    top: 52px;
+}
+.adminMainHeader .adimnHeader ul.navbar-nav li.user-dropdown p {
+    line-height: 19px;
+}
+.adminMainHeader .adimnHeader ul.navbar-nav a.dropdown-item {
+    line-height: 14px;
+}    
+.adminMainHeader .adimnHeader ul.navbar-nav li.user-dropdown {
+    margin-left: 20px !important;
+    line-height: 52px;
+    background: #2f85ce;
+    padding: 0 20px;
+}    
+.adminMainHeader .adimnHeader {
+    padding-right: 0 !important;
+}    
+.adimnHeader li.nav-item.dropdown span.adminName {
+    display: none;
+}     
+.signupQuestonPage .meddleContentSec, .summitQuestBlock .meddleContentSec {
+    width: 85%;
+}    
+.withRightBar .pollQuestionBlock .meddleContentSec {
+    width: 90%;
+}    
+.uoloadDocumentsSec .filesuploadRow {
+    flex-direction: row;
+}    
+nav.navbar.adminMainHeader .adminLogo {
+    width: 70px;
+}
+.adminContentArea .main-panel {
+    width: calc(100% - 0px) !important;
+}
+.adminContentArea .adminMainHeader .adimnHeader {
+    width: calc(100% - 70px) !important;
+}    
+.sidebar-offcanvas.active {
+    left: 0;
+    right: unset !important;    
+}  
+.adimnHeader button.navbar-toggler .mdi-menu:before {
+    color: #fff;
+    font-size: 32px;
+}
+.eventNav button.eventSideNavBtn {
+    background: transparent;
+    border: 0;
+    padding: 0;
+    color: #fff;
+    font-size: 14px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;    
+}
+.eventNav button.eventSideNavBtn img {
+    margin-right: 8px;
+}    
+li.eventNav {
+    display: block;
+}
+.withRightBar .adiminBodyContent {
+    padding-right: 0;
+    width: 100%;    
+}
+.hideEventBar {
+    padding-left: 20px;
+}
+.adminMainHeader .adimnHeader .dropdown-menu {
+    left: unset !important;
+    width: 30%;
+    margin-top: 0px !important;    
+}
+.addEventImg .addEvntImgColl {
+    width: 33.33%;
+}
+.hideEventBar {
+    position: fixed;
+    right: 0px;
+    min-width: 100%;
+    top: 63px;
+    padding: 20px 20px;
+    background: rgba(0,0,0,0.3);
+    height: 100%;    
+}
+.hideEventBar ul.rightSideNav {
+    width: 280px;
+    float: right;
+}
+.rightSideNav a {
+    box-shadow: none;
+}     
+}
+@media(max-width:767px){ 
+.uoloadDocumentsSec .filesupload {
+    margin-bottom: 20px;
+}
+.rightSideBar ul.rightSideNav li:last-child .rightMenu {
+    margin-right: 0;
+}
+.rightSideNav a {
+    border: 1px solid #ccc;
+}
+.hideEventBar {
+    background: rgba(255,255,255,1);
+}
+.hideEventBar ul.rightSideNav {
+    width: 100%;
+    float: right;
+}
+.rightSideNav .rightMenu {
+    width: 100%;
+}
+.rightSideNav .rightMenu a {
+    background: #3ea0f4;
+    color: #ffffff;
+}  
+.adminContentArea .adminMainHeader .adimnHeader button.navbar-toggler {
+    padding: 0;
+}    
+.adminContentArea .content-wrapper {
+    padding: 10px;
+}    
+.signupQuestionBlock .pollQuestion {
+    margin-bottom: 10px;
+}    
+.signupQuestonPage .meddleContentSec, .summitQuestBlock .meddleContentSec {
+    width: 100%;
+}
+.signupQuestionBlock .boxContentRow {
+    padding-bottom: 10px;
+    margin-bottom: 15px;
+}    
+.agendaContentInfo hr {
+    display: none;
+}    
+.repeatPollQuestion {
+    position: absolute;
+    right: unset;
+    bottom: -80px;
+    left: 0;
+}    
+.withRightBar .pollQuestionBlock .meddleContentSec {
+    width: 100%;
+}    
+.addEventBtn .adEventBtn {
+    padding: 15px 10px;
+    min-width: 141px;
+}    
+.tableSearchSort {
+    flex-direction: column;
+}
+.sortingBtn .sortBox select.custom-select.form-control {
+    width: 100%;
+}
+.sortingBtn span.showEntry {
+    width: 120px;
+    font-size: 12px;    
+}    
+.tableSearchSort .tableSearch {
+    margin-bottom: 10px;
+    min-width: 100%;    
+}
+.listShowPgination {
+    flex-direction: column;
+}
+.listShowPgination .showEntey {
+    margin-bottom: 20px;
+}
+.showEntey p {
+    font-size: 14px;
+}    
+.listShowPgination {
+    padding: 20px 10px;
+}    
+.sortingBtn .sortBox, .sortingBtn {
+    width: 100%;
+}
+.navbar.default-layout .navbar-menu-wrapper .navbar-nav .nav-item .nav-link {
+    margin-right: 0 !important;
+}
+.boxContentRow {
+    margin-bottom: 15px;
+    border-bottom: 1px solid #f7f7f7;
+    padding-bottom: 15px;
+}
+.boxContentRow:last-child {
+    border: 0;
+    padding-bottom: 0;    
+} 
+.infoBoxData input.form-control {
+    width: 280px;
+} 
+.chooseSpeaker .boxContentRow {
+    padding-bottom: 0;
+}   
+.addEventVideoSec video.eventVideo {
+    height: 150px;
+}    
+.addEventImg .updateEventImg img {
+    height: 150px;
+    object-fit: cover;    
+}
+.boxContentRow {
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 20px;
+    height: auto;
+    padding-bottom: 10px;    
+}
+.boxContentRow .infoBoxData {
+    width: 100%;
+}
+.infoBoxData input.form-control {
+    width: 100%;
+    text-align: left;
+}    
+.infoSelectBox:before {
+    right: 0;
+    left: unset;
+}
+.infoSelectBox select.form-control {
+    text-align-last: left;
+    padding-left: 0px;
+    width: 100%;
+} 
+.infoSelectBox select.form-control, .infoSelectBox select.form-control option {
+    text-align: left;
+}
+.editSessionBlock .meddleContentSec input.form-control {
+    width: 100%;
+}  
+.uoloadDocumentsSec .filesuploadRow {
+    flex-direction: column;
+}    
+}
+@media(max-width:600px){
+.addClientBlock .addEventImgSec .addEventImg .addEvntImgColl {
+    width: 50%;
+}    
+.addNewEvntImg h4 {
+    font-size: 13px;
+}
+.addNewEvntImg img {
+    width: 33px;
+}
+.addEventImg .addEvntImgColl {
+    width: 50%;
+}    
+}
+@media(max-width:540px){
+.infoBoxData input.form-control, .infoBoxData textarea.form-control, .infoBoxData select.form-control {
+    min-width: 100%;
+}
+.adminMainHeader .adimnHeader {
+    padding-right: 0 !important;
+    padding-left: 0 !important;
+}    
+.addSpeakerSec .addSpeakerImg .addEvntImgColl {
+    width: 50%;
+}    
+.sortingBtn span.showEntry {
+    width: 140px;
+}
+.adminTableContent {
+    margin-top: 10px;
+}
+}
+@media(max-width:420px){
+.addDocumentRow .addEvntImg .addEImg {
+    height: 100%;
+}
+.addDocumentRow .addEImg .addNewEvntImg {
+    height: 100% !important;
+}
+.addSpeakerSec .addSpeakerImg .addEvntImgColl {
+    width: 100%;
+}    
+.clientListPage .tableSearchSort .tableSort {
+    flex-direction: column;
+}
+.addEventBtn {
+    margin-top: 10px;
+    text-align: right;
+}    
+.addEventImg {
+    flex-direction: column;
+}
+.addClientBlock .addEventImgSec .addEventImg .addEvntImgColl {
+    width: 100%;
+}    
+.documentText span.fileData {
+    margin-left: 6px;
+}    
+.addEventImg .addEvntImgColl {
+    width: 100%;
+}
+.addEventImg .updateEventImg img, .addEventVideoSec video.eventVideo {
+    height: 200px;
+}    
+.addEvntImg .addEImg .addNewEvntImg, .addDocumentRow .addEvntImg {
+    height: 150px;
+}
+.addEvntImg .addEImg {
+    height: auto;
+}    
+.addDocumentRow .addEvntImg {
+    height: 134px;
+}
+}
+
+@media(max-width:350px){
+.listShowPgination .tablePagination .page-item a {
+    padding: 6px 9px;
+}
+}
+/*============ End Admin Responsive =========*/

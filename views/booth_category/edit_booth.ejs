@@ -1,0 +1,113 @@
+
+<div class="content-wrapper">
+    <!-- Page Title Header Starts-->
+    <div class="headerTitle">
+        <h2>Edit Booth</h2>    
+        <% if(typeof errors !== 'undefined' && typeof errors.message !== 'undefined') { %>
+          <p class = "alert alert-danger ml15 mr15 text-center"><%- errors.message %></p>
+       <% } %>  
+       <% if(typeof errors !== 'undefined' && typeof errors.msg !== 'undefined') { %>
+          <p class = "alert alert-success ml15 mr15 text-center"><%- errors.msg %></p>
+       <% } %>
+    </div>
+    <!-- Page Title Header Ends-->
+    <form class="forms-sample"  action="/update-booth/<%=data._id %>" method="post" >
+        <div class="midContentRightBar">
+            <div class="meddleContentSec addClientBlock">
+              <div class="eventInfoBox">
+                  <div class="infoBoxContent">
+                      <div class="boxContentRow">
+                          <span class="infoTitle">Booth Name</span>
+                          <div class="infoBoxData">
+                              <input type="text" class="form-control"  name="name" value="<%=data.name %>" id="name" placeholder="Enter Booth Name">
+                              <% if(typeof errors !== 'undefined' && typeof errors.name !== 'undefined') { %>
+                                <p class = "error"><%- errors["name"] %></p>
+                            <% } %> 
+                          </div>
+                      </div>
+        
+                      <div class="boxContentRow">
+                        <span class="infoTitle">Google meet</span>
+                        <div class="infoBoxData">
+                            <input type="text" class="form-control"  name="google_meet" value="<%=data.google_meet %>" id="google_meet" placeholder="Enter Google meet">
+                            <% if(typeof errors !== 'undefined' && typeof errors.google_meet !== 'undefined') { %>
+                              <p class = "error"><%- errors["google_meet"] %></p>
+                          <% } %> 
+                        </div>
+                      </div>
+        
+                      <div class="boxContentRow">
+                        <span class="infoTitle">First Deck link</span>
+                        <div class="infoBoxData">
+                            <input type="text" class="form-control"  name="deck1" value="<%=data.deck1 %>" id="deck1" placeholder="Enter first deck">
+                            <% if(typeof errors !== 'undefined' && typeof errors.deck1 !== 'undefined') { %>
+                              <p class = "error"><%- errors["deck1"] %></p>
+                          <% } %> 
+                        </div>
+                      </div>
+        
+        
+                      <div class="boxContentRow">
+                        <span class="infoTitle">Second Deck link</span>
+                        <div class="infoBoxData">
+                            <input type="text" class="form-control"  name="deck2" value="<%=data.deck2 %>" id="deck2" placeholder="Enter second deck">
+                            <% if(typeof errors !== 'undefined' && typeof errors.deck2 !== 'undefined') { %>
+                              <p class = "error"><%- errors["deck2"] %></p>
+                          <% } %> 
+                        </div>
+                      </div>
+        
+                  <div class="boxContentRow">
+                    <span class="infoTitle">Demo link</span>
+                    <div class="infoBoxData">
+                        <input type="text" class="form-control"  name="demo" value="<%=data.demo %>" id="demo" placeholder="Enter Demo link">
+                        <% if(typeof errors !== 'undefined' && typeof errors.demo !== 'undefined') { %>
+                          <p class = "error"><%- errors["demo"] %></p>
+                      <% } %> 
+                    </div>
+                </div>
+
+                <div class="boxContentRow">
+                  <span class="infoTitle">Points</span>
+                  <div class="infoBoxData">
+                      <input type="number" class="form-control"  name="points" value="<%=data.points %>" id="points" placeholder="Enter points">
+                      <% if(typeof errors !== 'undefined' && typeof errors.points !== 'undefined') { %>
+                        <p class = "error"><%- errors["points"] %></p>
+                    <% } %> 
+                  </div>
+              </div>
+                      
+             
+                  </div>
+              </div>
+              
+              <div class="eventInfoBox">
+                <div class="infoBoxTitle">
+                  <h3>Enter Booth Description</h3>
+                </div>
+                <div class="infoBoxContent">
+                  <div class="boxContentTextArea">
+                    <div class="infoBoxData">
+                      <textarea class="form-control" rows="6" name="description"
+                        placeholder="Enter Booth description"><%=data.description %></textarea>
+                      <% if(typeof errors !== 'undefined' && typeof errors.description !== 'undefined') { %>
+                      <p class="error"><%- errors["description"] %></p>
+                      <% } %>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+            <!-- Submit Button -->
+            <div class="adminSubmitBtn">
+                <button type="submit" class="btn btn-primary adminPageBtn">Update Booth</button>
+            </div>
+            <!-- Submit Button -->
+            </div>
+        </div>
+  </form>
+  </div>
+  
+        <!-- content-wrapper ends -->
+  
+  

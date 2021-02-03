@@ -1,0 +1,122 @@
+<%- include('../partials/header') %>
+<div class="container-fluid page-body-wrapper">
+  <!-- partial:partials/_sidebar.html -->
+<%- include('../partials/sidebar') %>
+<div class="main-panel">
+          <div class="content-wrapper ">
+            <div class="dashboard" >
+              <div class="row" >
+              <div class="col-md-12 d-flex align-items-stretch grid-margin">
+                <div class="row flex-grow">
+                  
+                  <div class="col-12 stretch-card">
+                    <div class="card">
+                      <div class="card-body">
+                        <h4 class="card-title">Edit Speakers</h4>
+
+                      <section id="tabs" class="project-tab">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <nav>
+                                        <div class="nav nav-tabs nav-fill" id="nav-tab" role="tablist">
+                                            <a class="nav-item nav-link" id="nav-home-tab" role="tab" aria-controls="nav-home" aria-selected="true">Step One</a>
+                                            <a class="nav-item nav-link active" id="nav-profile-tab" data-toggle="tab"  role="tab" aria-controls="nav-profile" aria-selected="false">Step two</a>
+                                            <a class="nav-item nav-link" id="nav-contact-tab" role="tab" aria-controls="nav-contact" aria-selected="false">Step three</a>
+                                        </div>
+                                    </nav>
+                                    <div class="tab-content" id="nav-tabContent">
+
+                                        <div class="tab-pane fade" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
+                                         
+                                           
+                                        </div>
+
+                                        <div class="tab-pane fade show active" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
+
+                                          <% if(typeof errors !== 'undefined' && typeof errors.message !== 'undefined') { %>
+                                            <p class = "alert alert-danger ml15 mr15 text-center"><%- errors.message %></p>
+                                         <% } %>  
+                                         <% if(typeof errors !== 'undefined' && typeof errors.msg !== 'undefined') { %>
+                                            <p class = "alert alert-success ml15 mr15 text-center"><%- errors.msg %></p>
+                                         <% } %>      
+                                          <form class="form-sample" action="/update-speaker/<%=speaker_id %>" method="post">
+                                            <!-- <p class="card-description"> <button type="button" class="add_speaker" id="1">+ Speakers</button> </p> -->
+                                            <div class="row">
+                                              <div class="col-md-6">
+                                                <div class="form-group row">
+                                                  <label class="col-sm-3 col-form-label">Speaker Name</label>
+                                                  <div class="col-sm-9">
+                                                    <input type="text" class="form-control" name="name" value="<%=data.name%>" />
+                                                  </div>
+                                                </div>
+                                              </div>
+                                              <div class="col-md-6">
+                                                <div class="form-group row">
+                                                  <label class="col-sm-3 col-form-label">Designation</label>
+                                                  <div class="col-sm-9">
+                                                    <input type="text" class="form-control" name="designation" value="<%=data.designation%>"/>
+                                                  </div>
+                                                </div>
+                                              </div>
+                                            </div>
+                                            <div class="row">
+                                              <div class="col-md-6">
+                                                <div class="form-group row">
+                                                  <label class="col-sm-3 col-form-label">Profile pic</label>
+                                                  <div class="col-sm-9">
+                                                    <input type="file" class="form-control upload-img" name="image" value="" id="image" accept="image/*">
+                                                    <input type="hidden" class="image_upload" name="profile_pic" value="<%=data.profile_pic%>"/>
+                                                    <img src="<%=url+data.profile_pic %>" style="width: 70px;height: 70px;"/>
+                                                  </div>
+                                                </div>
+                                              </div>
+                                              <div class="col-md-6">
+                                                <div class="form-group row">
+                                                  <label class="col-sm-3 col-form-label">Description</label>
+                                                  <div class="col-sm-9">
+                                                    <input type="text" class="form-control" name="description" value="<%=data.description%>"/>
+                                                   
+                                                  </div>
+                                                </div>
+                                              </div>
+                                            </div>
+                                            
+                                            <div class="speaker_append"></div>
+                                            <div class="form-group row ">
+                                              <div class="col-md-1">
+                                                <a href="/speaker-list/<%=data.event %>"> <button type="button" class="btn btn-success mr-2 skip">Back</button></a>
+                                              </div>
+                                              <div class="col-md-11">
+                                              <button type="submit" class="btn btn-success mr-2 submit_speaker">Submit</button>
+                                              </div>
+                                            </div>
+                                            <!-- <button type="submit" class="btn btn-success mr-2 submit_speaker">Submit</button> -->
+                                            
+                                            
+                                            
+                                          </form>
+                                         
+                                       
+                                            
+                                        </div>
+
+                                        <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">
+                                            
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                      </section>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+            </div>
+          </div>
+          
+      <!-- content-wrapper ends -->
+<%- include('../partials/footer') %>

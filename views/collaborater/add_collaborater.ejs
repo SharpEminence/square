@@ -1,0 +1,119 @@
+
+<div class="content-wrapper">
+  <!-- Page Title Header Starts-->
+  <div class="headerTitle">
+      <h2>Add Collaborater</h2>    
+      <% if(typeof errors !== 'undefined' && typeof errors.message !== 'undefined') { %>
+        <p class = "alert alert-danger ml15 mr15 text-center"><%- errors.message %></p>
+     <% } %>  
+     <% if(typeof errors !== 'undefined' && typeof errors.msg !== 'undefined') { %>
+        <p class = "alert alert-success ml15 mr15 text-center"><%- errors.msg %></p>
+     <% } %>
+  </div>
+  <!-- Page Title Header Ends-->
+  <form class="forms-sample"  action="/postcollaborater" method="post">
+<div class="midContentRightBar">
+    <div class="meddleContentSec addClientBlock">
+      <div class="eventInfoBox">
+          <div class="infoBoxContent">
+              <div class="boxContentRow">
+                  <span class="infoTitle">First Name</span>
+                  <div class="infoBoxData">
+                      <input type="text" class="form-control"  name="first_name" value="<%=formdata['first_name'] %>" id="first_name" placeholder="Enter first name">
+                      <% if(typeof errors !== 'undefined' && typeof errors.first_name !== 'undefined') { %>
+                        <p class = "error"><%- errors["first_name"] %></p>
+                    <% } %> 
+                  </div>
+              </div>
+              <div class="boxContentRow">
+                  <span class="infoTitle">Last Name</span>
+                  <div class="infoBoxData">
+                      <input type="text" class="form-control" name="last_name" value="<%=formdata['last_name'] %>" id="last_name" placeholder="Enter last name">
+                      <% if(typeof errors !== 'undefined' && typeof errors.last_name !== 'undefined') { %>
+                        <p class = "error"><%- errors["last_name"] %></p>
+                    <% } %> 
+                  </div>
+              </div>
+              <div class="boxContentRow">
+                  <span class="infoTitle">Email</span>
+                  <div class="infoBoxData">
+                      <input type="email" class="form-control" name="email" value="<%=formdata['email'] %>" id="email" placeholder="Enter email" autocomplete="off">
+                      <% if(typeof errors !== 'undefined' && typeof errors.email !== 'undefined') { %>
+                        <p class = "error"><%- errors["email"] %></p>
+                    <% } %> 
+                  </div>
+              </div>
+              <div class="boxContentRow">
+                <span class="infoTitle">Password</span>
+                <div class="infoBoxData">
+                    <input type="password" class="form-control" name="password" value="" id="password" placeholder="**********" autocomplete="off"> 
+                    <% if(typeof errors !== 'undefined' && typeof errors.password !== 'undefined') { %>
+                      <p class = "error"><%- errors["password"] %></p>
+                  <% } %> 
+                </div>
+            </div>
+            <div class="boxContentRow">
+              <span class="infoTitle">Confirm Password</span>
+              <div class="infoBoxData">
+                  <input type="password" class="form-control" id="" name="confirm_password" value="" id="confirm_password" placeholder="**********" autocomplete="off">
+                  <% if(typeof errors !== 'undefined' && typeof errors.confirm_password !== 'undefined') { %>
+                    <p class = "error"><%- errors["confirm_password"] %></p>
+                <% } %> 
+              </div>
+          </div>
+              <div class="boxContentRow">
+                  <span class="infoTitle">Phone</span>
+                  <div class="infoBoxData">
+                      <input type="text" class="form-control"  name="mobile_number" value="<%=formdata['mobile_number'] %>" id="mobile_number" placeholder="Enter contact number">
+                      <% if(typeof errors !== 'undefined' && typeof errors.mobile_number !== 'undefined') { %>
+                        <p class = "error"><%- errors["mobile_number"] %></p>
+                    <% } %> 
+                  </div>
+              </div>
+             
+          </div>
+      </div>
+    
+      <!-- Add Images section -->
+        <div class="addEventImgSec">
+          <div class="infoBoxTitle">
+              <h3>Profile Pic</h3>
+          </div>
+            <div class="addEventImg">
+                <div class="addEvntImgColl addEvntImg">
+                  <div class="addEImg">
+                      <input type="file" id="myFile" class="upload-img" name="image"  accept="image/*"> 
+
+                      <input type="hidden" class="image_upload" name="image_data" value="<%=formdata['image_data'] %>"/>
+                      <div class="addNewEvntImg">
+                          <h4>Profile Pic</h4>
+                          <img src="../assets/images/navIcon/addImg.png" />
+                      </div>
+                     
+                  </div>
+                </div>
+                <div class="addEvntImgColl">
+                  <div class="updateEventImg">
+                      <img class="display_img" src="" />
+                      <!-- <span class="itemTrash"><img src="../assets/images/navIcon/trash.png" /></span> -->
+                  </div>
+                </div>
+                <% if(typeof errors !== 'undefined' && typeof errors.image_data !== 'undefined') { %>
+                  <p class = "error"><%- errors["image_data"] %></p>
+              <% } %> 
+            </div>
+        </div>
+    <!-- End Images section -->
+    <!-- Submit Button -->
+    <div class="adminSubmitBtn">
+        <button type="submit" class="btn btn-primary adminPageBtn">Add Collaborater</button>
+    </div>
+    <!-- Submit Button -->
+    </div>
+</div>
+</form>
+</div>
+
+
+
+

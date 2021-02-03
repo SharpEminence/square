@@ -1,0 +1,41 @@
+<div class="adiminBodyContent">
+  <!-- Start Page Title Header Starts-->
+    <div class="headerTitle">
+        <h2>Edit Summit Quest</h2>    
+        <% if(typeof errors !== 'undefined' && typeof errors.message !== 'undefined') { %>
+          <p class = "alert alert-danger ml15 mr15 text-center"><%- errors.message %></p>
+       <% } %>  
+       <% if(typeof errors !== 'undefined' && typeof errors.msg !== 'undefined') { %>
+          <p class = "alert alert-success ml15 mr15 text-center"><%- errors.msg %></p>
+       <% } %>      
+    </div>
+      <!-- End Page Title Header Ends-->
+      <form class="forms-sample"  action="/update-summit/<%=data._id %>/<%=event_id%>" method="post">
+    <div class="midContentRightBar summitQuestBlock">
+        <div class="meddleContentSec">
+          <div class="eventInfoBox">
+              <div class="infoBoxContent">
+                  <div class="pollQuestionRow">
+                      <span class="infoTitle"><%=data.title%></span>
+                      <div class="pollQuestion">
+                          <!-- <div class="infoBoxData">
+                              <input type="text" class="form-control" name="description" id="description" placeholder="Add description here" value="<%=data.description%>" required>
+                          </div> -->
+                          <div class="addPoints">
+                              <input type="number" class="form-control" name="rewardPoints" min={0} id="rewardPoints"  placeholder="Enter Point’s" value="<%=data.rewardPoints%>" required>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+              
+            
+          </div>
+          <!-- Submit Button -->
+            <div class="adminSubmitBtn">
+                <button type="submit" class="btn btn-primary adminPageBtn">Update Quest</button>
+            </div>
+          <!-- Submit Button -->  
+        </div>
+    </div>
+  </form>
+</div>

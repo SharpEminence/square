@@ -1,0 +1,66 @@
+
+    <!-- partial:partials/_sidebar.html -->
+    <nav class="sidepanel sidebar sidebar-offcanvas adminLeftSidebar <% if(typeof left_side != 'undefined' && left_side == 'active') { %>leftBarOpen<% } %>" id="mySidepanel">
+      <ul class="nav leftNavOuter">
+        <li class="nav-item <% if(active == 'Dashboard') { %>active<% } %>" >
+          <a class="nav-link" href="/">
+            <img src="/assets/images/navIcon/dashboard.png" />
+            <span class="menu-title">Dashboard</span>
+          </a>
+        </li>
+        <li class="nav-item <% if(active == 'Booth') { %>active<% } %>">
+          <a class="nav-link" href="/booth-list">
+            <img src="/assets/images/navIcon/company-new.png" />
+            <span class="menu-title">Booth Category</span>
+          </a>
+        </li>
+        <li class="nav-item <% if(active == 'Agenda_Category') { %>active<% } %>">
+          <a class="nav-link" href="/agenda/category-list">
+            <img src="/assets/images/navIcon/agenda-new.png" />
+            <span class="menu-title">Agenda Category</span>
+          </a>
+        </li>
+        <!-- <li class="nav-item <% if(active == 'Membership') { %>active<% } %>">
+          <a class="nav-link" href="/membership-list">
+            <img src="/assets/images/navIcon/membership-new.png" />
+            <span class="menu-title">Membership Type</span>
+          </a>
+        </li> -->
+        <li class="nav-item <% if(active == 'Client') { %>active<% } %>">
+          <a class="nav-link" href="/client-list">
+            <img src="/assets/images/navIcon/clients.png" />
+            <span class="menu-title">Client’s</span>
+          </a> 
+        </li>
+        <li class="nav-item <% if(active == 'Event') { %>active<% } %>">
+          <a class="nav-link" href="/event-list">
+            <img src="/assets/images/navIcon/event.png" />
+            <span class="menu-title">Event</span>
+          </a>
+        </li>
+        <!-- <li class="nav-item <% if(active == 'Designation') { %>active<% } %>">
+          <a class="nav-link" href="/designation-list">
+            <img src="/assets/images/navIcon/designation-new.png" />
+            <span class="menu-title">Designations</span>
+          </a>
+        </li> -->
+        <% if(typeof user !== "undefined" && user.role == 1) {%>
+        <li class="nav-item <% if(active == 'Collaborater') { %>active<% } %>">
+          <a class="nav-link" href="/collaborater-list">
+            <img src="/assets/images/navIcon/collaborator.png" />
+            <span class="menu-title">Collaborator</span>
+          </a>
+        </li>
+        <%}%>
+        <!-- <li class="nav-item">
+          <a class="nav-link" href="https://adminchat.illumeetvirtual.com/<%= (typeof user !== 'undefined') ? user.chat_token : '' %>">
+            <img src="/assets/images/navIcon/helpDesk.png" />
+            <span class="menu-title">Help Desk</span>
+          </a>
+        </li> -->
+      
+      </ul>
+    </nav>
+    <!-- partial -->
+
+    <div class="main-panel <% if(typeof left_side != 'undefined' && left_side == 'active') { %>adminContentArea withRightBar<% } else { %>adminContentAreaRight<% } %>">

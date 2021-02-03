@@ -1,0 +1,98 @@
+
+
+
+
+    <form class="form_custom"  action="/update-news/<%=data._id %>/<%=event_id%>" method="post">
+
+    <div class="adiminBodyContent">
+      <!-- Start Page Title Header Starts-->
+        <div class="headerTitle">
+            <h2>Edit News</h2>    
+            <% if(typeof errors !== 'undefined' && typeof errors.message !== 'undefined') { %>
+              <p class = "alert alert-danger ml15 mr15 text-center"><%- errors.message %></p>
+           <% } %>  
+           <% if(typeof errors !== 'undefined' && typeof errors.msg !== 'undefined') { %>
+              <p class = "alert alert-success ml15 mr15 text-center"><%- errors.msg %></p>
+           <% } %>      
+        </div>
+          <!-- End Page Title Header Ends-->
+        <div class="midContentRightBar">
+        <div class="meddleContentSec agendaContentInfo">
+          <div class="eventInfoBox">
+              <div class="infoBoxContent">
+                  
+                  <div class="boxContentRow">
+                      <span class="infoTitle">News Title</span>
+                      <div class="infoBoxData">
+                          <input type="text" class="form-control" name="title" value="<%=data.title %>" id="title" placeholder="Enter news title">
+                          <% if(typeof errors !== 'undefined' && typeof errors.title !== 'undefined') { %>
+                            <p class = "error"><%- errors["title"] %></p>
+                        <% } %> 
+                      </div>
+                  </div>
+                
+              </div>
+          </div>
+          
+        </div>
+          <!-- Start Sponsor Description section -->
+              <div class="eventInfoBox">
+                  <div class="infoBoxTitle">
+                      <h3>News Description</h3>
+                  </div>
+                  <div class="infoBoxContent">
+                      <div class="boxContentTextArea">
+                          <div class="infoBoxData">
+                              <textarea class="form-control" rows="7" placeholder="Enter news description" name="description"><%=data.description %></textarea>
+                              <% if(typeof errors !== 'undefined' && typeof errors.description !== 'undefined') { %>
+                                <p class = "error"><%- errors["description"] %></p>
+                            <% } %> 
+                          </div>
+                      </div>
+                  </div>
+              </div>
+            <!-- End Sponsor Description section -->
+            <!-- Start Sponsor Logo section -->
+            <div class="addEventImgSec">
+              <div class="infoBoxTitle">
+                  <h3>Add News Image</h3>
+              </div>
+              <div class="addEventImg">
+                <div class="addEvntImgColl addEvntImg">
+                  <div class="addEImg">
+                      <input type="file" id="myFile" class="upload-img" name="image"  accept="image/*"> 
+
+                      <input type="hidden" class="image_upload" name="image_data" value="<%=data.image %>"/>
+                      <div class="addNewEvntImg">
+                          <h4>News Image</h4>
+                          <img src="/assets/images/navIcon/addImg.png" />
+                      </div>
+                     
+                  </div>
+                </div>
+                <div class="addEvntImgColl">
+                  <div class="updateEventImg">
+                    <img class="display_img" src="/uploads/<%=data.image %>" />
+                      <!-- <span class="itemTrash"><img src="/assets/images/navIcon/trash.png" /></span> -->
+                  </div>
+                </div>
+                <% if(typeof errors !== 'undefined' && typeof errors.image_data !== 'undefined') { %>
+                  <p class = "error"><%- errors["image_data"] %></p>
+              <% } %> 
+            </div>
+                
+            </div>
+            <!-- End Sponsor Logo section -->
+            
+    </div>
+        <!-- Submit Button -->
+        <div class="adminSubmitBtn">
+            <button type="submit" class="btn btn-primary adminPageBtn">Update News</button>
+        </div>
+        <!-- Submit Button -->
+    </div>
+  </form>
+   
+  
+  <!-- content-wrapper ends -->
+  

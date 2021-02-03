@@ -1,0 +1,163 @@
+<%- include('../partials/header') %>
+<div class="container-fluid page-body-wrapper">
+  <!-- partial:partials/_sidebar.html -->
+<%- include('../partials/sidebar') %>
+<div class="main-panel">
+          <div class="content-wrapper ">
+            <div class="dashboard" >
+              <div class="row" >
+              <div class="col-md-12 d-flex align-items-stretch grid-margin">
+                <div class="row flex-grow">
+                  
+                  <div class="col-12 stretch-card">
+                    <div class="card">
+                      <div class="card-body">
+                        <h4 class="card-title">Add Agenda/Session</h4>
+
+                      <section id="tabs" class="project-tab">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <nav>
+                                        <div class="nav nav-tabs nav-fill" id="nav-tab" role="tablist">
+                                            <a class="nav-item nav-link" id="nav-home-tab" data-toggle=""  role="tab" aria-controls="nav-home" aria-selected="true">Step One</a>
+                                            <a class="nav-item nav-link " id="nav-profile-tab"  role="tab" aria-controls="nav-profile" aria-selected="false">Step two</a>
+                                            <a class="nav-item nav-link active" id="nav-contact-tab" data-toggle=tab" href="#nav-contact" role="tab" aria-controls="nav-contact" aria-selected="false">Step three</a>
+                                        </div>
+                                    </nav>
+                                    <div class="tab-content" id="nav-tabContent">
+
+                                        <div class="tab-pane fade" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
+                                         
+                                           
+                                        </div>
+
+                                        <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
+
+                                          
+                                       
+                                            
+                                        </div>
+
+                                        <div class="tab-pane fade  show active" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">
+                                          <p class = "alert alert-danger ml15 mr15 text-center please_fill" style="display:none;">Please fill all fields!</p>
+                                          <p class = "alert alert-danger ml15 mr15 text-center wrong" style="display:none;">Something went wrong, please try again later!</p>
+
+                                          <p class = "alert alert-success ml15 mr15 text-center" style="display:none;">Agenda saved successfully!</p>
+                                        <form class="form-sample" id="add_agenda" action="/add-event/step-three-post/<%=event_id %>" action="post">
+                                          <!-- <p class="card-description"> <button type="button" class="add_agenda" id="1">+ Agenda</button> </p> -->
+                                          <div class="row">
+                                            <div class="col-md-6">
+                                              <div class="form-group row">
+                                                <label class="col-sm-3 col-form-label">Agenda Date</label>
+                                                <div class="col-sm-9">
+                                                  <input type="date" class="form-control" name="date" />
+                                                </div>
+                                              </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                              <div class="form-group row">
+                                                <label class="col-sm-3 col-form-label">Start time</label>
+                                                <div class="col-sm-9">
+                                                  <input type="time" class="form-control" name="start_time"/>
+                                                </div>
+                                              </div>
+                                            </div>
+                                          </div>
+                                          <div class="row">
+                                           
+                                            <div class="col-md-6">
+                                              <div class="form-group row">
+                                                <label class="col-sm-3 col-form-label">End time</label>
+                                                <div class="col-sm-9">
+                                                  <input type="time" class="form-control" name="end_time"/>
+                                                </div>
+                                              </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                              <div class="form-group row">
+                                                <label class="col-sm-3 col-form-label">Image</label>
+                                                <div class="col-sm-9">
+                                                  <input type="file" class="form-control upload-img" name="image" value="" id="image" accept="image/*">
+                                                  <input type="hidden" class="image_upload" name="image"/>
+                                                </div>
+                                              </div>
+                                            </div>
+
+                                          </div>
+
+                                          <div class="row">
+                                           
+                                            
+                                            <div class="col-md-6">
+                                              <div class="form-group row">
+                                                <label class="col-sm-3 col-form-label">Video</label>
+                                                <div class="col-sm-9">
+                                                  <input type="file" class="form-control upload-img" name="video" value="" id="video" accept="video/*">
+                                                  <input type="hidden" class="image_upload" name="video"/>
+                                                </div>
+                                              </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                              <div class="form-group row">
+                                                <label class="col-sm-3 col-form-label">Description</label>
+                                                <div class="col-sm-9">
+                                                  <textarea  class="form-control" name="description"></textarea>
+                                                </div>
+                                              </div>
+                                            </div>
+
+                                          </div>
+
+                                          <div class="row">
+                                           
+                                            
+                                            <div class="col-md-6">
+                                              <div class="form-group row">
+                                                <label class="col-sm-3 col-form-label">Select Speakers</label>
+                                                <div class="col-sm-9">
+                                                <select class="form-control" name="speakers" multiple>
+                                                  <% data.map((offer,i) => { %>
+                                                  <option value="<%= offer._id %>"><%= offer.name %></option>
+                                                  <% }) %>
+                                                </select>
+                                                </div>
+                                              </div>
+                                            </div>
+                                            
+
+                                          </div>
+                                          
+                                          
+                                          <div class="agenda_append"></div>
+                                          
+                                          <div class="form-group row ">
+                                            <div class="col-md-1">
+                                              <a href="/event-list"> <button type="button" class="btn btn-success mr-2 skip">Skip</button></a>
+                                            </div>
+                                            <div class="col-md-11">
+                                            <button type="submit" class="btn btn-success mr-2 submit_speaker">Submit</button>
+                                            </div>
+                                          </div>
+                                          
+                                          
+                                          
+                                        </form>
+                                       
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                      </section>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+            </div>
+          </div>
+          
+      <!-- content-wrapper ends -->
+<%- include('../partials/footer') %>

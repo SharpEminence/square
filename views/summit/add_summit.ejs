@@ -1,0 +1,65 @@
+<div class="adiminBodyContent">
+  <!-- Start Page Title Header Starts-->
+    <div class="headerTitle">
+        <h2>Add Summit Quest</h2>    
+        <% if(typeof errors !== 'undefined' && typeof errors.message !== 'undefined') { %>
+          <p class = "alert alert-danger ml15 mr15 text-center"><%- errors.message %></p>
+       <% } %>  
+       <% if(typeof errors !== 'undefined' && typeof errors.msg !== 'undefined') { %>
+          <p class = "alert alert-success ml15 mr15 text-center"><%- errors.msg %></p>
+       <% } %>      
+    </div>
+      <!-- End Page Title Header Ends-->
+  <form class="forms-sample"  action="/summitpost/<%=event_id%>" method="post">
+    <div class="midContentRightBar summitQuestBlock">
+        <div class="meddleContentSec">
+          <div class="eventInfoBox">
+              <div class="infoBoxContent">
+                  <div class="pollQuestionRow">
+                      <span class="infoTitle">Enter Description</span>
+                      <div class="pollQuestion">
+                          <div class="infoBoxData">
+                              <input type="text" class="form-control" name="form[0][description]" id="description" placeholder="Add description here" value="" required>
+                          </div>
+                          <div class="addPoints">
+                              <input type="text" class="form-control" name="form[0][point]" id="description"  placeholder="Add Point’s" value="" required>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+              
+              <div class="summit_data"></div>
+              <div class="repeatPollQuestion">
+                  <button type="button" class="btn btn-primary repeatPollOpt" data-id="1">
+                      <img src="../assets/images/navIcon/addpollQueston.png" />
+                  </button>
+              </div>
+          </div>
+          <!-- Submit Button -->
+            <div class="adminSubmitBtn">
+                <button type="submit" class="btn btn-primary adminPageBtn">Add Quest</button>
+            </div>
+          <!-- Submit Button -->  
+        </div>
+    </div>
+  </form>
+</div>
+
+<script src="/assets/js/jquery-3.5.1.min.js"></script>   
+<script>
+
+
+$(document).ready(function(){
+    
+
+   
+    $(document).on("click",'.repeatPollOpt',function() {
+      var elmId = $(this).attr("data-id");
+      $(".summit_data").before('<div class="infoBoxContent"><div class="pollQuestionRow"><span class="infoTitle">Enter Description</span><div class="pollQuestion"><div class="infoBoxData"><input type="text" class="form-control" name="form['+elmId+'][description]" id="description" placeholder="Add description here" value="" required></div><div class="addPoints"><input type="text" class="form-control" name="form['+elmId+'][point]" id="description"  placeholder="Add Point’s" value="" required></div></div></div></div>');
+      $(this).attr('data-id', parseInt(elmId)+1);
+    });
+
+  
+   
+  });
+  </script>

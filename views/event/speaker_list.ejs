@@ -1,0 +1,97 @@
+<%- include('../partials/header') %>
+<div class="container-fluid page-body-wrapper">
+  <!-- partial:partials/_sidebar.html -->
+<%- include('../partials/sidebar') %>
+<div class="main-panel">
+          <div class="content-wrapper ">
+            <div class="dashboard" >
+              <div class="row" >
+              <div class="col-md-12 d-flex align-items-stretch grid-margin">
+                <div class="row flex-grow">
+                  
+                  <div class="col-12 stretch-card">
+                    <div class="card">
+                      <div class="card-body">
+                        <h4 class="card-title">Speakers List</h4>
+
+                      <section id="tabs" class="project-tab">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <nav>
+                                        <div class="nav nav-tabs nav-fill" id="nav-tab" role="tablist">
+                                            <a class="nav-item nav-link" id="nav-home-tab" role="tab" aria-controls="nav-home" aria-selected="true">Step One</a>
+                                            <a class="nav-item nav-link active" id="nav-profile-tab" data-toggle="tab"  role="tab" aria-controls="nav-profile" aria-selected="false">Step two</a>
+                                            <a class="nav-item nav-link" id="nav-contact-tab" role="tab" aria-controls="nav-contact" aria-selected="false">Step three</a>
+                                        </div>
+                                    </nav>
+                                    <div class="tab-content" id="nav-tabContent">
+
+                                        <div class="tab-pane fade" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
+                                         
+                                           
+                                        </div>
+
+                                        <div class="tab-pane fade show active" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
+
+                                          
+                                          <table id="example" class="table table-striped table-bordered dt-responsive nowrap" style="width:100%">
+                                            <thead>
+                                              <tr>
+                                                <th> # </th>
+                                                <th> Speaker </th>
+                                                <th> Event </th>
+                                                <th> Designation </th>
+                                                <th> Action </th>
+                                              </tr>
+                                            </thead>
+                                            <tbody>
+                                              <% if(data.length > 0) {%>
+                                                <% data.map((offer,i) => { %>
+                                            <tr>
+                                            <td><%= i+1 %></td>
+                                            <td><%= offer.name %></td>
+                                            <td><%= offer.event.title %></td>
+                                            <td><%= offer.designation %></td>
+                                           
+                                            <td><span>
+                                            <a href="/edit-speaker/<%= offer._id %>" data-toggle="tooltip" data-placement="top" title="Edit">
+                                                <i class="menu-icon typcn typcn-pencil"></i></a></span>
+                                             
+                                              </td>   
+                                            </tr>
+                                            <% }) %>
+                                            <% } %>
+                                            
+                                            </tbody>
+                                          </table>
+                                          <div class="form-group row ">
+                                            <div class="col-md-1">
+                                              <a href="/edit-event/<%=id %>"> <button type="button" class="btn btn-success mr-2 skip">Back</button></a>
+                                            </div>
+                                            <div class="col-md-11">
+                                              <a href="/session-list/<%=id %>"> <button type="button" class="btn btn-success mr-2">Next</button></a>
+                                            </div>
+                                          </div>
+                                            
+                                        </div>
+
+                                        <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">
+                                            
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                      </section>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+            </div>
+          </div>
+          
+      <!-- content-wrapper ends -->
+<%- include('../partials/footer') %>

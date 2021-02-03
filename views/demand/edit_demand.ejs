@@ -1,0 +1,91 @@
+
+
+<link rel="stylesheet" href="http://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">	
+<link rel="stylesheet" href="/assets/jquery.tagsinput-revisited.css" />
+
+<link href="/tag/jquery.flexdatalist.css" rel="stylesheet" type="text/css">
+<link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/selectize.js/0.12.6/css/selectize.bootstrap3.min.css" integrity="sha256-ze/OEYGcFbPRmvCnrSeKbRTtjG4vGLHXgOqsyLFTRjg=" crossorigin="anonymous" />
+
+
+<form class="form_custom" id="" method="post" action="/update-demand/<%=data._id %>/<%=event_id%>">
+  <div class="adiminBodyContent">
+    <!-- Start Page Title Header Starts-->
+      <div class="headerTitle">
+          <h2>Edit On-Demand</h2>    
+          <% if(typeof errors !== 'undefined' && typeof errors.message !== 'undefined') { %>
+            <p class = "alert alert-danger ml15 mr15 text-center"><%- errors.message %></p>
+         <% } %>  
+         <% if(typeof errors !== 'undefined' && typeof errors.msg !== 'undefined') { %>
+            <p class = "alert alert-success ml15 mr15 text-center"><%- errors.msg %></p>
+         <% } %>
+      </div>
+        <!-- End Page Title Header Ends-->
+      <div class="midContentRightBar addSessionBlock">
+      <div class="meddleContentSec agendaContentInfo">
+        <div class="eventInfoBox">
+            <div class="infoBoxContent">
+         
+                <div class="boxContentRow">
+                    <span class="infoTitle">Title</span>
+                    <div class="infoBoxData">
+                        <input type="text" class="form-control" placeholder="Enter title" name="title" id="title" value="<%=data.title %>">
+                        <% if(typeof errors !== 'undefined' && typeof errors.title !== 'undefined') { %>
+                          <p class = "error"><%- errors["title"] %></p>
+                      <% } %> 
+                    </div>
+                </div>
+                <div class="boxContentRow">
+                  <span class="infoTitle">Hyperlink</span>
+                  <div class="infoBoxData">
+                      <input type="text" class="form-control" placeholder="Enter Hyperlink" name="hyperlink" id="hyperlink" value="<%=data.hyperlink %>">
+                      <% if(typeof errors !== 'undefined' && typeof errors.hyperlink !== 'undefined') { %>
+                        <p class = "error"><%- errors["hyperlink"] %></p>
+                    <% } %> 
+                  </div>
+              </div>
+
+
+              <div class="boxContentRow">
+                <span class="infoTitle">Here link</span>
+                <div class="infoBoxData">
+                    <input type="text" class="form-control" placeholder="Enter Here link" name="herelink" id="herelink" value="<%=data.herelink %>">
+                    <% if(typeof errors !== 'undefined' && typeof errors.hyperlink !== 'herelink') { %>
+                      <p class = "error"><%- errors["herelink"] %></p>
+                  <% } %> 
+                </div>
+            </div>
+            
+            </div>
+           
+        </div>
+       
+      
+      </div>
+        <!-- Start Session Description section -->
+            <div class="eventInfoBox">
+                <div class="infoBoxTitle">
+                    <h3>Description</h3>
+                </div>
+                <div class="infoBoxContent">
+                    <div class="boxContentTextArea">
+                        <div class="infoBoxData">
+                            <textarea class="form-control" rows="7" placeholder="Enter description" name="description" id="description" ><%=data.description %></textarea>
+                            <% if(typeof errors !== 'undefined' && typeof errors.description !== 'undefined') { %>
+                              <p class = "error"><%- errors["description"] %></p>
+                          <% } %> 
+                        </div>
+                    </div>
+                </div>
+            </div>
+        
+        </div>
+      <!-- Submit Button -->
+      <div class="adminSubmitBtn">
+          <button type="submit" class="btn btn-primary adminPageBtn">Update On-demand</button>
+      </div>
+      <!-- Submit Button -->
+  </div>
+</form>
+
+
+

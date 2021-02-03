@@ -1,0 +1,358 @@
+
+
+<link rel="stylesheet" href="http://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">	
+<link rel="stylesheet" href="/assets/jquery.tagsinput-revisited.css" />
+
+<link href="/tag/jquery.flexdatalist.css" rel="stylesheet" type="text/css">
+<link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/selectize.js/0.12.6/css/selectize.bootstrap3.min.css" integrity="sha256-ze/OEYGcFbPRmvCnrSeKbRTtjG4vGLHXgOqsyLFTRjg=" crossorigin="anonymous" />
+
+<script src="https://cdn.ckeditor.com/ckeditor5/24.0.0/classic/ckeditor.js"></script>
+
+<form class="form_custom" id="" method="post" action="/postAgenda/<%=event_id %>">
+  <div class="adiminBodyContent">
+    <!-- Start Page Title Header Starts-->
+      <div class="headerTitle">
+          <h2>Add Agenda</h2>    
+          <% if(typeof errors !== 'undefined' && typeof errors.message !== 'undefined') { %>
+            <p class = "alert alert-danger ml15 mr15 text-center"><%- errors.message %></p>
+         <% } %>  
+         <% if(typeof errors !== 'undefined' && typeof errors.msg !== 'undefined') { %>
+            <p class = "alert alert-success ml15 mr15 text-center"><%- errors.msg %></p>
+         <% } %>
+      </div>
+        <!-- End Page Title Header Ends-->
+      <div class="midContentRightBar addSessionBlock">
+      <div class="meddleContentSec agendaContentInfo">
+        <div class="eventInfoBox">
+            <div class="infoBoxContent">
+              <!-- <div class="boxContentRow">
+                <span class="infoTitle">Agenda Type</span>
+                <div class="infoBoxData infoSelectBox">
+                  <select name="agenda_type" id="agenda_type" class="form-control" dir="rtl">
+                    <option value="">Select type</option>  
+                    <option value="normal">Webinar</option>
+                    <option value="video">Conference Room</option>
+                  </select>
+                    <% if(typeof errors !== 'undefined' && typeof errors.agenda_type !== 'undefined') { %>
+                      <p class = "error"><%- errors["agenda_type"] %></p>
+                  <% } %> 
+                </div>
+              </div> -->
+                <div class="boxContentRow">
+                    <span class="infoTitle">Agenda Title</span>
+                    <div class="infoBoxData">
+                        <input type="text" class="form-control" placeholder="Enter agenda title" name="title" id="title" value="<%=formdata['title'] %>">
+                        <% if(typeof errors !== 'undefined' && typeof errors.title !== 'undefined') { %>
+                          <p class = "error"><%- errors["title"] %></p>
+                      <% } %> 
+                    </div>
+                </div>
+                <!-- <div class="boxContentRow">
+                    <span class="infoTitle">Agenda Category</span>
+                    <div class="infoBoxData infoSelectBox">
+                        <div class="form-group">
+                          <select name="agenda_category" id="agenda_category"  class="form-control"  dir="rtl">
+                            <option value="">Enter agenda category</option>
+                            <% agenda_data.map((offer,i) => { %>
+                              <option  value="<%= offer._id %>"><%= offer.category %></option>
+                              <% }) %>
+                          </select>
+                          <% if(typeof errors !== 'undefined' && typeof errors.agenda_category !== 'undefined') { %>
+                            <p class = "error"><%- errors["agenda_category"] %></p>
+                        <% } %> 
+                        </div>
+                    </div>
+                </div> -->
+                <div class="boxContentRow">
+                    <span class="infoTitle">Agenda Date</span>
+                    <div class="infoBoxData">
+                        <input 
+                          type="date" 
+                          class="form-control" 
+                          placeholder="Select agenda date"  
+                          name="agenda_date" 
+                          id="agenda_date" 
+                          min="<%=formdata['currentDate'] %>"
+                          value="<%=formdata['agenda_date'] %>"
+                        >
+                        <% if(typeof errors !== 'undefined' && typeof errors.agenda_date !== 'undefined') { %>
+                          <p class = "error"><%- errors["agenda_date"] %></p>
+                      <% } %> 
+                       
+                    </div>
+                </div>
+                <div class="boxContentRow">
+                    <span class="infoTitle">Start Time</span>
+                    <div class="infoBoxData">
+                        <input type="time" class="form-control" placeholder="Select start time" name="start_time" id="start_time" value="<%=formdata['start_time'] %>">
+                        <% if(typeof errors !== 'undefined' && typeof errors.start_time !== 'undefined') { %>
+                          <p class = "error"><%- errors["start_time"] %></p>
+                      <% } %> 
+                    </div>
+                </div>
+                <div class="boxContentRow">
+                    <span class="infoTitle">End Time</span>
+                    <div class="infoBoxData">
+                        <input type="time" class="form-control" placeholder="Select end time" name="end_time" id="end_time" value="<%=formdata['end_time'] %>">
+                        <% if(typeof errors !== 'undefined' && typeof errors.end_time !== 'undefined') { %>
+                          <p class = "error"><%- errors["end_time"] %></p>
+                      <% } %> 
+                    </div>
+                </div>
+                <div class="boxContentRow">
+                  <span class="infoTitle">Google Meet Url</span>
+                  <div class="infoBoxData">
+                      <input type="text" class="form-control" placeholder="Enter url" name="google_meet" id="google_meet" value="<%=formdata['google_meet'] %>">
+                      <% if(typeof errors !== 'undefined' && typeof errors.google_meet !== 'undefined') { %>
+                        <p class = "error"><%- errors["google_meet"] %></p>
+                    <% } %> 
+                  </div>
+              </div>
+              <div class="boxContentRow">
+                <span class="infoTitle">Agenda points</span>
+                <div class="infoBoxData">
+                    <input type="number" class="form-control" placeholder="Enter Agenda points" name="points" id="points" value="<%=formdata['points'] %>">
+                    <% if(typeof errors !== 'undefined' && typeof errors.points !== 'undefined') { %>
+                      <p class = "error"><%- errors["points"] %></p>
+                  <% } %> 
+                </div>
+            </div>
+            
+              
+                <div class="boxContentRow">
+                    <span class="infoTitle">Tags</span>
+                    <div class="infoBoxData">
+                        <input type="text" class="form-control tags" placeholder="Enter Tags" name="tags" id="form-tags-1" value="<%=formdata['tags'] %>">
+                      
+                        <% if(typeof errors !== 'undefined' && typeof errors.tags !== 'undefined') { %>
+                          <p class = "error"><%- errors["tags"] %></p>
+                      <% } %> 
+                    </div>
+                </div>
+                <!-- <div class="boxContentRow">
+                  <span class="infoTitle">Featured</span>
+                  <div class="infoBoxData infoSelectBox">
+                    <select name="featured" id="featured" class="form-control" dir="rtl">
+                      <option value="">Select</option>  
+                      <option value="Yes">Yes</option>
+                      <option value="No">No</option>
+                    </select>
+                      <% if(typeof errors !== 'undefined' && typeof errors.featured !== 'undefined') { %>
+                        <p class = "error"><%- errors["featured"] %></p>
+                    <% } %> 
+                  </div>
+                </div> -->
+            </div>
+        </div>
+        <!-- <div class="eventInfoBox">
+            <div class="infoBoxTitle">
+                <h3>Choose Speaker</h3>
+            </div>
+            <div class="infoBoxContent chooseSpeaker">
+                <div class="boxContentRow">
+                    <div class="infoBoxData">
+                      <select name="speakers" id="speakers" class="form-control"  multiple="multiple" style="display: none;">
+                        <% speaker_data.map((offer,i) => { %>
+                          <option value="<%= offer._id %>"><%= offer.first_name+' '+offer.last_name %></option>
+                          <% }) %>
+                      </select>
+                        <% if(typeof errors !== 'undefined' && typeof errors.speakers !== 'undefined') { %>
+                          <p class = "error"><%- errors["speakers"] %></p>
+                      <% } %> 
+                    </div>
+                </div>
+            </div>
+        </div> -->
+      </div>
+        <!-- Start Session Description section -->
+            <div class="eventInfoBox">
+                <div class="infoBoxTitle">
+                    <h3>Agenda Description</h3>
+                </div>
+
+                <div class="infoBoxContent">
+                    <div class="boxContentTextArea">
+                        <div class="infoBoxData">
+                            <textarea class="form-control" rows="7" placeholder="Enter agenda description" name="description" id="description" ><%=formdata['description'] %></textarea>
+                            <% if(typeof errors !== 'undefined' && typeof errors.description !== 'undefined') { %>
+                              <p class = "error"><%- errors["description"] %></p>
+                          <% } %> 
+                        </div>
+                    </div>
+                </div>
+            </div>
+          <!-- End Session Description section -->
+          <!-- Add Speaker Image section -->
+       <!-- <div class="addEventImgSec">
+        <div class="infoBoxTitle">
+            <h3>Agenda Box Image</h3>
+        </div>
+          <div class="addEventImg addSpeakerImg">
+              <div class="addEvntImgColl addEvntImg">
+                <div class="addEImg">
+                  <input type="file" id="myFile" class="upload-img" name="image"  accept="image/*"> 
+
+                  <input type="hidden" class="image_upload" name="box_image" value="<%=formdata['box_image'] %>"/>
+                  <div class="addNewEvntImg">
+                      <h4>Box image</h4>
+                      <img src="/assets/images/navIcon/addImg.png" />
+                  </div>
+                 
+              </div>
+            </div>
+            <div class="addEvntImgColl">
+              <div class="updateEventImg">
+                  <img class="display_img" src="/uploads/dummy_logo.png" />
+               <span class="itemTrash"><img src="/assets/images/navIcon/trash.png" /></span> 
+              </div>
+            </div>
+            <% if(typeof errors !== 'undefined' && typeof errors.box_image !== 'undefined') { %>
+              <p class = "error"><%- errors["box_image"] %></p>
+          <% } %> 
+          </div>
+      </div> -->
+      <!-- End Images section -->
+          <!-- Start upload document section -->
+          <!-- <div class="addEventImgSec">
+            <div class="infoBoxTitle">
+                <h3>Add Agenda Document’s</h3>
+            </div>
+              <div class="addEventImg addDocumentRow">
+                  <div class="addEvntImgColl addEvntImg">
+                    <div class="addEImg">
+                        <input type="file" id="myFile" name="filename" name="image[]" class="multiple_files" multiple accept=".xlsx,.xls,.doc,.docx,.ppt,.pptx,.txt,.pdf"> 
+                        <div class="addNewEvntImg">
+                            <h4>Add Document</h4>
+                            <img src="/assets/images/navIcon/documentUpload.png" />
+                        </div>
+                    </div>
+                  </div>
+                  <div class="uoloadDocumentsSec">
+                      <div class="filesuploadRow"> -->
+
+
+                          <!-- <div class="filesupload">
+                              <div class="documentUpdate documentPDF">
+                                  <div class="documentType">
+                                      <img src="/assets/images/navIcon/pdfIcon.png" />
+                                  </div>
+                                  <div class="documentText">
+                                      <h4>Session Document name.pdf</h4>
+                                      <p class="">16 Sep, 2019 <span class="fileData">2.4MB</span></p>
+                                  </div>
+                                  <div class="downDelete">
+                                      <span class="fileDownload"><i class="fa fa-download"></i></span>
+                                      <span class="fileDelete"><i class="fa fa-trash"></i></span>
+                                  </div>
+                              </div>
+                          </div>
+                          <div class="filesupload">
+                              <div class="documentUpdate documentPDF">
+                                  <div class="documentType">
+                                      <img src="/assets/images/navIcon/docIcon.png" />
+                                  </div>
+                                  <div class="documentText">
+                                      <h4>Session Document name.pdf</h4>
+                                      <p class="">16 Sep, 2019 <span class="fileData">2.4MB</span></p>
+                                  </div>
+                                  <div class="downDelete">
+                                      <span class="fileDownload"><i class="fa fa-download"></i></span>
+                                      <span class="fileDelete"><i class="fa fa-trash"></i></span>
+                                  </div>
+                              </div>
+                          </div> -->
+
+
+                      <!-- </div>
+                     
+                  </div>
+                  <% if(typeof errors !== 'undefined' && typeof errors.file_data !== 'undefined') { %>
+                    <p class = "error"><%- errors["file_data"] %></p>
+                <% } %> 
+              </div>
+          </div> -->
+
+
+
+          <!-- End upload document section -->
+          <!-- Add Images section -->
+    <!-- <div class="addEventImgSec">
+      <div class="infoBoxTitle">
+          <h3>Add Agenda Images</h3>
+      </div>
+        <div class="addEventImg">
+            <div class="addEvntImgColl addEvntImg">
+              <div class="addEImg">
+                  <input type="file" id="myFile" name="image[]" class="multiple_images" multiple accept="image/*"> 
+                  <div class="image_hidden"></div>
+                  <div class="addNewEvntImg">
+                      <h4>Add Images</h4>
+                      <img src="/assets/images/navIcon/addImg.png" />
+                  </div>
+              </div>
+            </div>
+            <div class="image_display"></div>
+            <% if(typeof errors !== 'undefined' && typeof errors.image_data !== 'undefined') { %>
+              <p class = "error"><%- errors["image_data"] %></p>
+          <% } %> 
+            
+        </div>
+    </div> -->
+    <!-- End Images section -->
+    <!-- Add video section -->
+    <!-- <div class="addEventImgSec">
+      <div class="infoBoxTitle">
+          <h3>Add Agenda Videos</h3>
+      </div>
+        <div class="addEventImg">
+            <div class="addEvntImgColl addEvntImg">
+              <div class="addEImg">
+                  <input type="file" id="myFile" name="image[]" class="multiple_videos" multiple accept="video/mp4"> 
+                  <div class="video_hidden"></div>
+                  <div class="addNewEvntImg">
+                      <h4>Add Video</h4>
+                      <img src="/assets/images/navIcon/addImg.png" />
+                  </div>
+              </div>
+            </div>  
+            <div class="video_display"></div>
+            
+            <% if(typeof errors !== 'undefined' && typeof errors.video_data !== 'undefined') { %>
+              <p class = "error"><%- errors["video_data"] %></p>
+          <% } %> 
+        </div>
+    </div> -->
+    <!-- End Add video section -->
+        </div>
+      <!-- Submit Button -->
+      <div class="adminSubmitBtn">
+          <button type="submit" class="btn btn-primary adminPageBtn">Add Agenda</button>
+      </div>
+      <!-- Submit Button -->
+  </div>
+</form>
+<script>
+  ClassicEditor
+      .create( document.querySelector( '#description' ) )
+      .catch( error => {
+          console.error( error );
+      } );
+</script>
+<script src="/assets/js/jquery-3.5.1.min.js"></script>   
+<script>
+
+
+  $(function() {
+  
+
+    var temp1="<%=formdata['agenda_type'] %>"; 
+    $("#agenda_type").val(temp1);
+    var temp2="<%=formdata['agenda_category'] %>"; 
+    $("#agenda_category").val(temp2);
+    var temp3="<%=formdata['lounge_type'] %>"; 
+    $("#lounge_type").val(temp3);
+ 
+    var temp5="<%=formdata['featured'] %>"; 
+    $("#featured").val(temp5);
+  });
+  </script>

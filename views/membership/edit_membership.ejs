@@ -1,0 +1,45 @@
+
+<div class="content-wrapper">
+    <!-- Page Title Header Starts-->
+    <div class="headerTitle">
+        <h2>Edit Membership</h2>    
+        <% if(typeof errors !== 'undefined' && typeof errors.message !== 'undefined') { %>
+          <p class = "alert alert-danger ml15 mr15 text-center"><%- errors.message %></p>
+       <% } %>  
+       <% if(typeof errors !== 'undefined' && typeof errors.msg !== 'undefined') { %>
+          <p class = "alert alert-success ml15 mr15 text-center"><%- errors.msg %></p>
+       <% } %>
+    </div>
+    <!-- Page Title Header Ends-->
+    <form class="forms-sample"  action="/update-membership/<%=data._id %>" method="post" >
+  <div class="midContentRightBar">
+      <div class="meddleContentSec addClientBlock">
+        <div class="eventInfoBox">
+            <div class="infoBoxContent">
+                <div class="boxContentRow">
+                    <span class="infoTitle">Membership Type</span>
+                    <div class="infoBoxData">
+                        <input type="text" class="form-control"  name="membership" value="<%=data.membership %>" id="membership" placeholder="Enter membership">
+                        <% if(typeof errors !== 'undefined' && typeof errors.membership !== 'undefined') { %>
+                          <p class = "error"><%- errors["membership"] %></p>
+                      <% } %> 
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        
+        
+      <!-- Submit Button -->
+      <div class="adminSubmitBtn">
+          <button type="submit" class="btn btn-primary adminPageBtn">Update Membership</button>
+      </div>
+      <!-- Submit Button -->
+      </div>
+  </div>
+  </form>
+  </div>
+  
+        <!-- content-wrapper ends -->
+  
+  

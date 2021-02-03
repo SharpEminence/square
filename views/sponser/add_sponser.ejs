@@ -1,0 +1,370 @@
+
+
+  <form class="form_custom"  action="/postsponser/<%=event_id %>" method="post">
+  <div class="adiminBodyContent">
+    <!-- Start Page Title Header Starts-->
+      <div class="headerTitle">
+          <h2>Add Partner</h2>    
+          <% if(typeof errors !== 'undefined' && typeof errors.message !== 'undefined') { %>
+            <p class = "alert alert-danger ml15 mr15 text-center"><%- errors.message %></p>
+         <% } %>  
+         <% if(typeof errors !== 'undefined' && typeof errors.msg !== 'undefined') { %>
+            <p class = "alert alert-success ml15 mr15 text-center"><%- errors.msg %></p>
+         <% } %>      
+      </div>
+        <!-- End Page Title Header Ends-->
+      <div class="midContentRightBar">
+      <div class="meddleContentSec agendaContentInfo">
+        <div class="eventInfoBox">
+            <div class="infoBoxContent">
+                <!-- <div class="boxContentRow">
+                    <span class="infoTitle">Choose Sponsor Type</span>
+                    <div class="infoBoxData infoSelectBox">
+                        <div class="form-group">
+                          <select name="membership" id="membership" class="form-control" dir="rtl">
+                            <option value="">Select sponsor type</option>
+                            <% data.map((offer,i) => { %>
+                              <option  value="<%= offer._id %>"><%= offer.membership %></option>
+                              <% }) %>
+                          </select>
+                          <% if(typeof errors !== 'undefined' && typeof errors.membership !== 'undefined') { %>
+                            <p class = "error"><%- errors["membership"] %></p>
+                        <% } %> 
+                        </div>
+                    </div>
+                </div> -->
+                <div class="boxContentRow">
+                  <span class="infoTitle">Select Booth</span>
+                  <div class="infoBoxData infoSelectBox">
+                      <div class="form-group">
+                        <select  name="booth" id="booth" class="form-control" dir="rtl">
+                          <option value="">Select Booth</option>
+                          <% company_data.map((offer,i) => { %>
+                            <option  value="<%= offer._id %>"><%= offer.name %></option>
+                            <% }) %>
+                        </select>
+                        <% if(typeof errors !== 'undefined' && typeof errors.booth !== 'undefined') { %>
+                          <p class = "error"><%- errors["booth"] %></p>
+                      <% } %> 
+                      </div>
+                  </div>
+              </div>
+
+                <div class="boxContentRow">
+                    <span class="infoTitle">Sponsor Name</span>
+                    <div class="infoBoxData">
+                        <input type="text" class="form-control" name="sponsor_name" value="<%=formdata['sponsor_name'] %>" id="sponsor_name" placeholder="Enter sponsor name">
+                        <% if(typeof errors !== 'undefined' && typeof errors.sponsor_name !== 'undefined') { %>
+                          <p class = "error"><%- errors["sponsor_name"] %></p>
+                      <% } %> 
+                    </div>
+                </div>
+                <!-- <div class="boxContentRow">
+                    <span class="infoTitle">Company Name</span>
+                    <div class="infoBoxData">
+                        <input type="text" class="form-control" name="company_name" value="<%=formdata['company_name'] %>" id="company_name" placeholder="Enter company name">
+                        <% if(typeof errors !== 'undefined' && typeof errors.company_name !== 'undefined') { %>
+                          <p class = "error"><%- errors["company_name"] %></p>
+                          <% } %> 
+                    </div>
+                </div> -->
+               
+                <!-- <div class="boxContentRow">
+                    <span class="infoTitle">Contact Email</span>
+                    <div class="infoBoxData">
+                        <input type="text" class="form-control" placeholder="Enter email address" name="email" value="<%=formdata['email'] %>" id="email">
+                        <% if(typeof errors !== 'undefined' && typeof errors.email !== 'undefined') { %>
+                          <p class = "error"><%- errors["email"] %></p>
+                      <% } %> 
+                    </div>
+                </div> -->
+                <!-- <div class="boxContentRow">
+                    <span class="infoTitle">Address</span>
+                    <div class="infoBoxData">
+                        <input type="text" class="form-control" id="" placeholder="Enter Address" name="address" value="<%=formdata['address'] %>" id="address">
+                        <% if(typeof errors !== 'undefined' && typeof errors.address !== 'undefined') { %>
+                          <p class = "error"><%- errors["address"] %></p>
+                      <% } %> 
+                    </div>
+                </div> -->
+                <div class="boxContentRow">
+                  <span class="infoTitle">HyperLink</span>
+                  <div class="infoBoxData">
+                      <input type="text" class="form-control"  placeholder="Enter hyperlink Link" name="hyperlink1" value="<%=formdata.hyperlink1 %>" id="sponsor_link">
+                      <% if(typeof errors !== 'undefined' && typeof errors.hyperlink1 !== 'undefined') { %>
+                        <p class = "error"><%- errors["hyperlink1"] %></p>
+                    <% } %> 
+                  </div>
+                </div>
+                <!-- <div class="boxContentRow">
+                  <span class="infoTitle">Deck Link</span>
+                  <div class="infoBoxData">
+                      <input type="text" class="form-control"  placeholder="Enter Deck link" name="deck_link" value="<%=formdata.deck_link %>" id="deck_link">
+                      <% if(typeof errors !== 'undefined' && typeof errors.deck_link !== 'undefined') { %>
+                        <p class = "error"><%- errors["deck_link"] %></p>
+                    <% } %> 
+                  </div>
+                </div>
+                <div class="boxContentRow">
+                  <span class="infoTitle">Demo Link</span>
+                  <div class="infoBoxData">
+                      <input type="text" class="form-control"  placeholder="Enter Demo link" name="demo_link" value="<%=formdata.demo_link %>" id="demo_link">
+                      <% if(typeof errors !== 'undefined' && typeof errors.demo_link !== 'undefined') { %>
+                        <p class = "error"><%- errors["demo_link"] %></p>
+                    <% } %> 
+                  </div>
+                </div> -->
+                <!-- <div class="boxContentRow">
+                    <span class="infoTitle">No. of Employees</span>
+                    <div class="infoBoxData infoSelectBox">
+                        <div class="form-group">
+                          <select   name="employees" id ="employees" class="form-control" dir="">
+                            <option value="">Select employees</option>
+                            <option value="1-10">1 - 10</option>
+                            <option value="11-50">11 - 50</option>
+                            <option value="51-100">51 - 100</option>
+                            <option value="100+">100+</option>
+                          </select>
+                          <% if(typeof errors !== 'undefined' && typeof errors.employees !== 'undefined') { %>
+                            <p class = "error"><%- errors["employees"] %></p>
+                        <% } %> 
+                        </div>
+                    </div>
+                </div> -->
+            </div>
+        </div>
+        
+      </div>
+        <!-- Start Sponsor Description section -->
+            <!-- <div class="eventInfoBox">
+                <div class="infoBoxTitle">
+                    <h3>Partner Description</h3>
+                </div>
+                <div class="infoBoxContent">
+                    <div class="boxContentTextArea">
+                        <div class="infoBoxData">
+                            <textarea class="form-control" rows="7" placeholder="Enter sponsor description" name="description"><%=formdata['description'] %></textarea>
+                            <% if(typeof errors !== 'undefined' && typeof errors.description !== 'undefined') { %>
+                              <p class = "error"><%- errors["description"] %></p>
+                          <% } %> 
+                        </div>
+                    </div>
+                </div>
+            </div> -->
+          <!-- End Sponsor Description section -->
+          <!-- Start Sponsor Logo section -->
+          <div class="addEventImgSec">
+            <div class="infoBoxTitle">
+                <h3>Add Partner Logo (PNG file type only)</h3>
+            </div>
+              <div class="addEventImg">
+                  <div class="addEvntImgColl addEvntImg">
+                    <div class="addEImg">
+                        <input type="file" id="myFile" class="upload-img" name="image"  accept="image/png"> 
+
+                        <input type="hidden" class="image_upload" name="image_data" value="<%=formdata['image_data'] %>"/>
+                        <div class="addNewEvntImg">
+                            <h4>Partner Logo</h4>
+                            <img src="/assets/images/navIcon/addImg.png" />
+                        </div>
+                       
+                    </div>
+                  </div>
+                  <div class="addEvntImgColl agendaImageUpdated">
+                    <div class="updateEventImg">
+                        <img class="display_img" src="/uploads/dummy_logo.png" />
+                        <!-- <span class="itemTrash"><img src="/assets/images/navIcon/trash.png" /></span> -->
+                    </div>
+                  </div>
+                  <% if(typeof errors !== 'undefined' && typeof errors.image_data !== 'undefined') { %>
+                    <p class = "error"><%- errors["image_data"] %></p>
+                <% } %> 
+              </div>
+          </div>
+
+           <!-- Add Images section -->
+      <!-- <div class="addEventImgSec">
+        <div class="infoBoxTitle">
+          <h3>Add Sponsor Logos</h3>
+        </div>
+        <div class="addEventImg">
+          <div class="addEvntImgColl addEvntImg">
+            <div class="addEImg">
+              <input type="file" id="myFile" name="image[]" class="multiple_images" multiple accept="image/*">
+              <div class="image_hidden"></div>
+              <div class="addNewEvntImg">
+                <h4>Add Logos</h4>
+                <img src="/assets/images/navIcon/addImg.png" />
+              </div>
+            </div>
+          </div>
+          <div class="image_display"></div>
+          <% if(typeof errors !== 'undefined' && typeof errors.image_data !== 'undefined') { %>
+          <p class="error"><%- errors["image_data"] %></p>
+          <% } %>
+
+        </div>
+      </div> -->
+
+      <!-- <div class="eventInfoBox">
+        <div class="infoBoxTitle">
+          <h3>Enter Logos Hyperlinks</h3>
+        </div>
+        <div class="infoBoxContent">
+          <div class="boxContentRow">
+            <span class="infoTitle">First Logo hyperlink</span>
+            <div class="infoBoxData">
+              <input type="text" class="form-control" name="hyperlink1" value="<%=formdata.hyperlink1 %>" id="hyperlink1"
+                placeholder="https://example.com">
+              <% if(typeof errors !== 'undefined' && typeof errors.hyperlink1 !== 'undefined') { %>
+              <p class="error"><%- errors["hyperlink1"] %></p>
+              <% } %>
+            </div>
+          </div>
+
+          <div class="boxContentRow">
+            <span class="infoTitle">Second Logo hyperlink</span>
+            <div class="infoBoxData">
+              <input type="text" class="form-control" name="hyperlink2" value="<%=formdata.hyperlink2 %>" id="hypehyperlink2rlink1"
+                placeholder="https://example.com">
+              <% if(typeof errors !== 'undefined' && typeof errors.hyperlink2 !== 'undefined') { %>
+              <p class="error"><%- errors["hyperlink2"] %></p>
+              <% } %>
+            </div>
+          </div>
+
+          <div class="boxContentRow">
+            <span class="infoTitle">Third Logo hyperlink</span>
+            <div class="infoBoxData">
+              <input type="text" class="form-control" name="hyperlink3" value="<%=formdata.hyperlink3 %>" id="hyperlink3"
+                placeholder="https://example.com">
+              <% if(typeof errors !== 'undefined' && typeof errors.hyperlink3 !== 'undefined') { %>
+              <p class="error"><%- errors["hyperlink3"] %></p>
+              <% } %>
+            </div>
+          </div>
+
+          <div class="boxContentRow">
+            <span class="infoTitle">Fourth Logo hyperlink</span>
+            <div class="infoBoxData">
+              <input type="text" class="form-control" name="hyperlink4" value="<%=formdata.hyperlink4 %>" id="hyperlink4"
+                placeholder="https://example.com">
+              <% if(typeof errors !== 'undefined' && typeof errors.hyperlink4 !== 'undefined') { %>
+              <p class="error"><%- errors["hyperlink4"] %></p>
+              <% } %>
+            </div>
+          </div>
+        </div>
+      </div> -->
+      <!-- End Images section -->
+
+
+          <!-- End Sponsor Logo section -->
+          <!-- <div class="eventInfoBox">
+            <div class="infoBoxTitle">
+                <h3>Sponsor Lounge</h3>
+            </div>
+            <div class="infoBoxContent">
+                <div class="boxContentRow">
+                    <span class="infoTitle">Lounge Title</span>
+                    <div class="infoBoxData">
+                        <input type="text" class="form-control" id="" placeholder="Enter lounge title" name="lounge_title" value="<%=formdata['lounge_title'] %>" id="lounge_title">
+                        <% if(typeof errors !== 'undefined' && typeof errors.lounge_title !== 'undefined') { %>
+                          <p class = "error"><%- errors["lounge_title"] %></p>
+                      <% } %> 
+                    </div>
+                </div>
+                <div class="boxContentRow">
+                    <span class="infoTitle">Lounge Type</span>
+                    <div class="infoBoxData infoSelectBox">
+                        <div class="form-group">
+                          <select name="lounge_type" id="lounge_type" class="form-control" dir="rtl">
+                            <option value="">Select lounge type</option>
+                            <option value="chat_room">Chat Room</option>
+                            <option value="360_space">360 Space</option>
+                          </select>
+                          <% if(typeof errors !== 'undefined' && typeof errors.lounge_title !== 'undefined') { %>
+                            <p class = "error"><%- errors["lounge_title"] %></p>
+                        <% } %> 
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div> -->
+          <!-- Start Embed 360 Space section -->
+            <!-- <div class="eventInfoBox space_code" style="display:none">
+                <div class="infoBoxTitle">
+                    <h3>Embed 360<sup>o</sup> Space Code</h3>
+                </div>
+                <div class="infoBoxContent">
+                    <div class="boxContentTextArea">
+                        <div class="infoBoxData">
+                            <textarea class="form-control" rows="10" placeholder="Enter 360 space Code" id="space_code" name="space_code" required disabled><%=formdata['space_code'] %></textarea>
+                            <% if(typeof errors !== 'undefined' && typeof errors.space_code !== 'undefined') { %>
+                              <p class = "error"><%- errors["space_code"] %></p>
+                          <% } %> 
+                        </div>
+                    </div>
+                </div>
+            </div> -->
+          <!-- End Embed 360 Space section -->
+          <!-- Start Embed 360 Space section -->
+            <!-- <div class="eventInfoBox">
+                <div class="infoBoxTitle">
+                    <h3>Embed Video Game Code</h3>
+                </div>
+                <div class="infoBoxContent">
+                    <div class="boxContentTextArea">
+                        <div class="infoBoxData">
+                            <textarea class="form-control" rows="10" placeholder="Enter video game Code" name="game_code"><%=formdata['game_code'] %></textarea>
+                            <% if(typeof errors !== 'undefined' && typeof errors.game_code !== 'undefined') { %>
+                              <p class = "error"><%- errors["game_code"] %></p>
+                          <% } %> 
+                        </div>
+                    </div>
+                </div>
+            </div> -->
+          <!-- End Embed 360 Space section -->
+  </div>
+      <!-- Submit Button -->
+      <div class="adminSubmitBtn">
+          <button type="submit" class="btn btn-primary adminPageBtn">Add Partner</button>
+      </div>
+      <!-- Submit Button -->
+  </div>
+</form>
+ 
+
+<!-- content-wrapper ends -->
+
+    
+<script src="/assets/js/jquery-3.5.1.min.js"></script>   
+<script>
+
+
+  $(function() {
+  
+$("#lounge_type").click(function(){
+if($("#lounge_type").val() == "360_space")
+{
+  $('.space_code').show();
+  $("#space_code").prop('disabled', false);
+}
+else
+{
+  $('.space_code').hide();
+  $("#space_code").prop('disabled', true);
+
+}
+});
+
+var temp="<%=formdata['booth'] %>"; 
+$("#booth").val(temp);
+var temp1="<%=formdata['category'] %>"; 
+$("#category").val(temp1);
+var temp2="<%=formdata['space_code'] %>"; 
+$("#space_code").val(temp2);
+var temp3="<%=formdata['employees'] %>"; 
+$("#employees").val(temp3);
+  });
+  </script>       

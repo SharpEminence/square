@@ -1,0 +1,91 @@
+
+<form class="form_custom" id="" method="post" action="/postspeaker/<%=event_id %>">
+<div class="adiminBodyContent">
+  <!-- Start Page Title Header Starts-->
+    <div class="headerTitle">
+        <h2>Add Event Design</h2>    
+        <% if(typeof errors !== 'undefined' && typeof errors.message !== 'undefined') { %>
+          <p class = "alert alert-danger ml15 mr15 text-center"><%- errors.message %></p>
+       <% } %>  
+       <% if(typeof errors !== 'undefined' && typeof errors.msg !== 'undefined') { %>
+          <p class = "alert alert-success ml15 mr15 text-center"><%- errors.msg %></p>
+       <% } %>
+    </div>
+      <!-- End Page Title Header Ends-->
+<div class="midContentRightBar">
+    <div class="meddleContentSec agendaContentInfo">
+      <div class="eventInfoBox">
+          <div class="infoBoxContent">
+              <div class="boxContentRow">
+              <span class="infoTitle"></span>
+              <div class="infoBoxData">
+                  <input type="text" class="form-control" placeholder="#00FFFF" name="speaker_name" id="speaker_name" value="<%=formdata['speaker_name'] %>">
+                  <% if(typeof errors !== 'undefined' && typeof errors.speaker_name !== 'undefined') { %>
+                    <p class = "error"><%- errors["speaker_name"] %></p>
+                <% } %> 
+              </div>
+              </div>
+              <div class="boxContentRow">
+                  <span class="infoTitle">D O B</span>
+                  <div class="infoBoxData calIcon">
+                      <input type="text" class="form-control"  placeholder="#00FFFF" name="dob" id="dob" value="<%=formdata['dob'] %>">
+                      <% if(typeof errors !== 'undefined' && typeof errors.dob !== 'undefined') { %>
+                        <p class = "error"><%- errors["dob"] %></p>
+                    <% } %> 
+                      <span class="speakerCalender"><i class="fa fa-calendar"></i></span>
+                  </div>
+              </div>
+             
+              <div class="boxContentRow">
+                  <span class="infoTitle">Contact Number</span>
+                  <div class="infoBoxData">
+                      <input type="text" class="form-control" id="" placeholder="00FFFF" name="contact" id="contact" value="<%=formdata['contact'] %>">
+                      <% if(typeof errors !== 'undefined' && typeof errors.contact !== 'undefined') { %>
+                        <p class = "error"><%- errors["contact"] %></p>
+                    <% } %> 
+                  </div>
+              </div>
+             
+              
+          </div>
+      </div>
+      <!-- Add Speaker Image section -->
+      <div class="addEventImgSec addSpeakerSec">
+          <div class="infoBoxTitle">
+              <h3>Add Speaker Image</h3>
+          </div>
+            <div class="addEventImg addSpeakerImg">
+                <div class="addEvntImgColl addEvntImg">
+                  <div class="addEImg">
+                    <input type="file" id="myFile" class="upload-img" name="image"  accept="image/*"> 
+
+                    <input type="hidden" class="image_upload" name="image_data" value="<%=formdata['image_data'] %>"/>
+                    <div class="addNewEvntImg">
+                        <h4>Background Image</h4>
+                        <img src="/assets/images/navIcon/addImg.png" />
+                    </div>
+                </div>
+              </div>
+              <div class="addEvntImgColl">
+                <div class="updateEventImg">
+                    <img class="display_img" src="/uploads/user.png" />
+                    <!-- <span class="itemTrash"><img src="/assets/images/navIcon/trash.png" /></span> -->
+                </div>
+              </div>
+              <% if(typeof errors !== 'undefined' && typeof errors.image_data !== 'undefined') { %>
+                <p class = "error"><%- errors["image_data"] %></p>
+            <% } %> 
+            </div>
+        </div>
+        <!-- End Images section -->
+    </div>
+      
+</div>
+    <!-- Submit Button -->
+    <div class="adminSubmitBtn">
+        <button type="submit" class="btn btn-primary adminPageBtn">Add Design</button>
+    </div>
+    <!-- Submit Button -->
+</div>
+
+</form>

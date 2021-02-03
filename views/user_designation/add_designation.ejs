@@ -1,0 +1,44 @@
+
+<div class="content-wrapper">
+  <!-- Page Title Header Starts-->
+  <div class="headerTitle">
+      <h2>Add Designation</h2>    
+      <% if(typeof errors !== 'undefined' && typeof errors.message !== 'undefined') { %>
+        <p class = "alert alert-danger ml15 mr15 text-center"><%- errors.message %></p>
+     <% } %>  
+     <% if(typeof errors !== 'undefined' && typeof errors.msg !== 'undefined') { %>
+        <p class = "alert alert-success ml15 mr15 text-center"><%- errors.msg %></p>
+     <% } %>
+  </div>
+  <!-- Page Title Header Ends-->
+  <form class="forms-sample"  action="/designationpost" method="post" >
+<div class="midContentRightBar">
+    <div class="meddleContentSec addClientBlock">
+      <div class="eventInfoBox">
+          <div class="infoBoxContent">
+              <div class="boxContentRow">
+                  <span class="infoTitle">Designation Name</span>
+                  <div class="infoBoxData">
+                      <input type="text" class="form-control"  name="title" value="<%=data.title %>" id="title" placeholder="Enter designation name">
+                      <% if(typeof errors !== 'undefined' && typeof errors.title !== 'undefined') { %>
+                        <p class = "error"><%- errors["title"] %></p>
+                    <% } %> 
+                  </div>
+              </div>
+              
+          </div>
+      </div>
+      
+      
+    <!-- Submit Button -->
+    <div class="adminSubmitBtn">
+        <button type="submit" class="btn btn-primary adminPageBtn">Add Designation</button>
+    </div>
+    <!-- Submit Button -->
+    </div>
+</div>
+</form>
+</div>
+
+      <!-- content-wrapper ends -->
+

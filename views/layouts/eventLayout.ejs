@@ -1,0 +1,206 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Uncharted Samko - <%=title%></title>
+    <!-- plugins:css -->
+    
+    <link rel="stylesheet" href="/assets/vendors/iconfonts/mdi/css/materialdesignicons.min.css">
+    <!-- <link rel="stylesheet" href="/assets/vendors/iconfonts/ionicons/css/ionicons.css">
+    <link rel="stylesheet" href="/assets/vendors/iconfonts/typicons/src/font/typicons.css">
+    <link rel="stylesheet" href="/assets/vendors/iconfonts/flag-icon-css/css/flag-icon.min.css">
+    <link rel="stylesheet" href="/assets/vendors/css/vendor.bundle.base.css">
+    <link rel="stylesheet" href="/assets/vendors/css/vendor.bundle.addons.css"> -->
+    <link rel="stylesheet" href="/assets/css/shared/custom.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"  crossorigin="anonymous">
+    <!-- endinject -->
+    
+    <!-- plugin css for this page -->
+    <!-- End plugin css for this page -->
+    <!-- inject:css -->
+    <link rel="stylesheet" href="/assets/css/shared/style.css">
+    <!-- endinject -->
+    <!-- Layout styles -->
+    <link rel="stylesheet" href="/assets/css/demo_1/style.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.21/css/dataTables.bootstrap4.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/responsive/2.2.5/css/responsive.bootstrap4.min.css">
+    <link rel="stylesheet" href="/assets/custom.css">
+
+    <!-- End Layout styles -->
+    <link rel="shortcut icon" href="/assets/images/favicon.png" />
+
+  </head>
+  <body>
+    <div class="body-spinner">
+        <div class="siteLoader">  
+            <div class="loader"></div>
+        </div>
+    </div>
+    <div class="container-scroller adminContentArea">
+      <!-- partial:partials/_navbar.html -->
+      <%-include('../partials/header')%>
+       
+       <!-- partial -->
+       <div class="container-fluid page-body-wrapper">
+        <%- include('../partials/sidebar') %>
+        <div class="content-wrapper">
+        <%-body%>
+        <%- include('../partials/right-sidebar') %>
+      </div>
+        <%- include('../partials/footer') %>
+
+       <!-- partial -->
+      </div>
+      <!-- main-panel ends -->
+    </div>
+    <!-- page-body-wrapper ends -->
+  </div> 
+    <!-- open right nav --->
+
+  <!-- container-scroller -->
+  <!-- plugins:js -->
+  <script src="/assets/vendors/js/vendor.bundle.base.js"></script>
+  <script src="/assets/vendors/js/vendor.bundle.addons.js"></script>
+  <!-- <script src="/assets/js/custom.js"></script> -->
+  <!-- endinject -->
+  <!-- Plugin js for this page-->
+  <!-- End plugin js for this page-->
+  <!-- inject:js -->
+  <script src="/assets/js/shared/off-canvas.js"></script>
+  <script src="/assets/js/shared/misc.js"></script>
+  <!-- endinject -->
+  <!-- Custom js for this page-->
+  <script src="/assets/js/demo_1/dashboard.js"></script>
+  <script src="/assets/js/jquery-3.5.1.min.js"></script>
+  <script src="https://cdn.datatables.net/1.10.21/js/jquery.dataTables.min.js"></script>
+  <script src="https://cdn.datatables.net/1.10.21/js/dataTables.bootstrap4.min.js"></script>
+  <script src="https://cdn.datatables.net/responsive/2.2.5/js/dataTables.responsive.min.js"></script>
+  <script src="https://cdn.datatables.net/responsive/2.2.5/js/responsive.bootstrap4.min.js"></script>
+  <script src="/assets/js/custom.js"></script>
+  
+  <script>
+    $(document).ready(function(){
+      $(".openbtn").click(function(){
+        $(".sidepanel").addClass("leftBarOpen");
+      });
+    });
+    </script>
+  <script>
+      // $( "#UserDropdown" ).on( "click", function() {
+      //     $(".user-dropdown").toggleClass("show");
+      //     $(".dropdown-menu-right").toggleClass("show");
+
+      $(document).ready(function() {
+      $(".item-purchase-banner").remove();
+      $(".purchase-banner-active").removeClass();
+      $('.body-spinner').hide();
+      $('#example').DataTable();
+
+      
+
+  });
+  
+//     $(function() {
+//   $('nav a[href^="/' + location.pathname.split("/")[1] + '"]').closest('.nav-item').addClass('active');
+// });
+  // };
+
+  // });
+  </script>
+  <script>
+    $(document).ready(function(){
+      //$("#mySidenav").hide();
+      $(".eventSideNavBtn").click(function(){
+        $("#mySidenav").toggle();
+      });
+    });
+    </script>
+    <!-- open right nav --->   
+    <!-- Add class on responsive mode -->  
+    <script>
+    jQuery(document).ready(function($) {
+      var alterClass = function() {
+        var ww = document.body.clientWidth;
+        if (ww > 991) {
+          $('.rightSideBar').removeClass('hideEventBar');
+        } else if (ww <= 992) {
+          $("#mySidenav").hide();
+          $('.rightSideBar').addClass('hideEventBar');
+        };
+      };
+      $(window).resize(function(){
+        alterClass();
+      });
+      //Fire it when the page first loads:
+      alterClass();
+    });      
+    </script>
+    <!-- End Add class on responsive mode --> 
+  <!-- ======= Video Play button ======= -->
+  <script>
+  var ppbutton = document.getElementById("vidbutton");
+  ppbutton.addEventListener("click", playPause);
+  myVideo = document.getElementById("myvid");
+  function playPause() { 
+      if (myVideo.paused) {
+          myVideo.play();
+          ppbutton.innerHTML = "";
+          }
+      else  {
+          myVideo.pause(); 
+          ppbutton.innerHTML = "";
+          }
+  }  
+      
+  </script>  
+
+  <!-- End custom js for this page-->
+</body>
+<script src="http://cdnjs.cloudflare.com/ajax/libs/selectize.js/0.12.6/js/standalone/selectize.min.js" integrity="sha256-+C0A5Ilqmu4QcSPxrlGpaZxJ04VjsRjKu+G82kl5UJk=" crossorigin="anonymous"></script>
+
+
+
+<script>
+$(document).ready(function () {
+  $('#time_zone').selectize({
+      sortField: 'text'
+  });
+});
+</script>
+<script src="http://code.jquery.com/ui/1.12.1/jquery-ui.min.js" integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU=" crossorigin="anonymous"></script>
+<script src="/assets/jquery.tagsinput-revisited.js"></script>
+<script type="text/javascript">
+  $(function() {
+    $('#form-tags-1').tagsInput();
+  
+    
+   
+    // $('#form-tags-4').tagsInput({
+    //   'autocomplete': {
+    //     source: [
+    //     { "id": "Apple","value":"ddd" },
+        
+    //     ]
+    //   } 
+    // });
+   
+  });
+</script>
+
+<script src="/tag/BsMultiSelect.js"></script>
+<script>$("#speakers").bsMultiSelect({cssPatch : {
+                   choices: {columnCount:'3' },
+                },
+                placeholder:'Choose Speakers'});</script>
+<!-- 
+<script>$("#time_zone").bsMultiSelect({cssPatch : {
+  choices: {columnCount:'4' },
+},
+placeholder:'Select timezone'});</script> -->
+
+
+</html>
+

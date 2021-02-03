@@ -1,0 +1,278 @@
+/*! =========================================================
+ *
+Custom Css Virtual Event Management 
+ 
+*
+* =========================================================
+*
+* MIT License Copyright 2017 Creative Tim (http://www.creative-tim.com/product/material-bootstrap-wizard)
+ *
+ *                       _oo0oo_
+ *                      o8888888o
+ *                      88" . "88
+ *                      (| -_- |)
+ *                      0\  =  /0
+ *                    ___/`---'\___
+ *                  .' \|     |// '.
+ *                 / \|||  :  |||// \
+ *                / _||||| -:- |||||- \
+ *               |   | \  -  /// |   |
+ *               | \_|  ''\---/''  |_/ |
+ *               \  .-\__  '-'  ___/-. /
+ *             ___'. .'  /--.--\  `. .'___
+ *          ."" '<  `.___\_<|>_/___.' >' "".
+ *         | | :  `- \`.;`\ _ /`;.`/ - ` : | |
+ *         \  \ `_.   \_ __\ /__ _/   .-` /  /
+ *     =====`-.____`.___ \_____/___.-`___.-'=====
+ *                       `=---='
+ *
+ *     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ *
+ *               Buddha Bless:  "No Bugs"
+ *
+ * ========================================================= */
+
+
+nav.navbar.adminMainHeader .adminLogo, nav.navbar.adminMainHeader .adimnHeader {
+    background: #3ea0f4;
+    box-shadow: none;
+}
+
+
+p.error {
+    color: #ff0000;
+    text-align: right;
+    margin-bottom: 2px;
+    font-size: 13px;
+}
+.boxContentRow {
+    /*margin-bottom: 12px;*/
+}
+
+ul.pagination {
+    padding: 30px 10px;
+}
+
+div#example_info {
+    margin: 0;
+    font-size: 13px;
+    color: #4a494a;
+    padding: 30px 10px;
+}
+
+div#example_length {
+    padding: 25px 10px 10px 10px
+}
+
+
+div#example_filter {
+    padding: 25px 10px 10px 10px
+}
+
+.table.table-striped tbody tr:nth-child(odd) {
+    background: unset;
+}
+.table-striped tbody tr:nth-of-type(odd) {
+    background-color:unset;
+}
+
+div.dataTables_wrapper div.dataTables_length label{
+    font-size: 14px;
+    margin-right: 10px;
+    color: #4a494a;
+    font-weight: 500;
+}
+
+
+.adminTableContent table.table thead th {
+    padding: 20px 12px;
+    height: auto;
+}
+/* 
+.adminListPage {
+    margin-top: unset;
+} */
+
+
+form.form_custom {
+    width: 100%;
+}
+
+
+input#form-tags-1_tag {
+    border: 0;
+    padding: 0;
+    text-align: right;
+    font-size: 14px;
+    color: #4a494a;
+    letter-spacing: 0.60px;
+    font-weight: 400;
+    line-height: 20px;
+}
+
+div#form-tags-1_tagsinput {
+    border: none;
+}
+.tagsinput .tag span.tag-text {
+    color: #9c9c9c;
+    font-size: 14px;
+}
+.tagsinput .tag {
+    background: #f4f4f4 !important;
+    margin: 0 5px 5px 0 !important;
+}
+.dashboardcode-bsmultiselect input.form-control {
+    height: calc(1.5em + 0.75rem + 2px) !important;
+}
+.dashboardcode-bsmultiselect ul.dropdown-menu {
+    padding: 10px;
+    margin: 0;
+    border: 0;
+    box-shadow: 0 2px 5px #ccc;
+    column-count: 1 !important;
+}
+.dashboardcode-bsmultiselect ul.dropdown-menu li {
+    padding: 0 !important;
+    margin-bottom: 6px;
+}
+.dashboardcode-bsmultiselect ul.dropdown-menu li:last-child {
+    margin-bottom: 0;
+}
+.dashboardcode-bsmultiselect ul.dropdown-menu li label {
+    font-size: 13px;
+    font-weight: 400;
+    cursor: pointer;
+}
+.tagsinput .tag button.tag-remove {
+    width: 20px;
+    height: 20px;
+    background: #cccccc;
+    border-radius: 50%;
+    top: 5px;
+    right: 5px;
+}
+.tagsinput .tag .tag-remove:before, .tagsinput .tag .tag-remove:after {
+    background: #888888 !important;
+    position: absolute;
+    display: block;
+    width: 10px;
+    height: 2px;
+    top: 9px !important;
+    left: 5px !important;
+    content: '';
+}
+
+.loader {
+    border: 10px solid #f3f3f3;
+    border-radius: 50%;
+    border-top: 10px solid #3498db;
+    width: 80px;
+    height: 80px;
+    -webkit-animation: spin 2s linear infinite;
+    animation: spin 2s linear infinite;
+}
+.body-spinner .siteLoader {
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
+    position: fixed;
+}
+  /* Safari */
+  @-webkit-keyframes spin {
+    0% { -webkit-transform: rotate(0deg); }
+    100% { -webkit-transform: rotate(360deg); }
+  }
+  
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+
+
+  .body-spinner {
+    background: rgba(255,255,255,0.8);
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    z-index: 99;
+}
+
+.infoBoxData .dashboardcode-bsmultiselect ul.form-control {
+    border: 0;
+    padding: 0;
+    border-color: transparent !important;
+    box-shadow: none !important;
+}
+.infoBoxData .dashboardcode-bsmultiselect ul.form-control li.badge {
+    padding: 9px 10px !important;
+    background: #e8f4ff;
+    border-radius: 0px;
+    margin-right: 15px;
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+.infoBoxData .dashboardcode-bsmultiselect ul.form-control li:last-child input[type="search"] {
+    border: 1px solid #eee !important;
+    min-height: 38px;
+    width: 100% !important;
+    padding: 0 10px !important;
+}
+.infoBoxData .dashboardcode-bsmultiselect ul.form-control li.badge span {
+    font-size: 12px;
+    font-weight: 500;
+}
+.infoBoxData .dashboardcode-bsmultiselect ul.form-control li.badge button.close span {
+    font-size: 20px;
+}
+.infoBoxData .dashboardcode-bsmultiselect ul.form-control li.badge button.close {
+    background: #3fa0f4;
+    width: 20px;
+    height: 20px;
+    color: #fff;
+    opacity: 0.7;
+    border-radius: 50%;
+    margin-left: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.infoBoxData .dashboardcode-bsmultiselect:focus {
+    outline: none;
+}
+
+
+.selectize-control.single .selectize-input, .selectize-control.single .selectize-input input {
+    cursor: pointer;
+    width: 224px;
+    border: transparent;
+    font-size: 14px;
+}
+
+
+.selectize-control.single .selectize-input:after {
+    right: unset;
+}
+
+
+.form-control.selectize-control {
+    text-align: right;
+}
+.cc1-chat-win-sndr-row .cc1-chat-win-msg-block:hover .cc1-chat-win-msg-actions {
+    display: none;
+}
+.cc1-chat-win-rcvr-row .cc1-chat-win-msg-block .cc1-chat-win-rcvr-dtls:hover .cc1-chat-win-msg-actions {
+    display: none;
+}
+.cc1-chat-win-msg-actions {
+    display: none !important;
+}
+
+
+.midContentRightBar .cc1-chat-win-msg-block .cc1-chat-win-msg-actions, .midContentRightBar .cc1-chat-win-msg-block .cc1-chat-win-msg-actions {
+    display: none !important;
+}
+
+label.btn.btn-primary.adEventBtn.upload_csv {
+    margin-top: 8px;
+}

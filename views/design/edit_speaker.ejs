@@ -1,0 +1,242 @@
+
+<form class="form_custom" id="" method="post" action="/update-speaker/<%=data._id %>/<%=event_id%>">
+  <div class="adiminBodyContent">
+    <!-- Start Page Title Header Starts-->
+      <div class="headerTitle">
+          <h2>Edit Speaker</h2>    
+          <% if(typeof errors !== 'undefined' && typeof errors.message !== 'undefined') { %>
+            <p class = "alert alert-danger ml15 mr15 text-center"><%- errors.message %></p>
+         <% } %>  
+         <% if(typeof errors !== 'undefined' && typeof errors.msg !== 'undefined') { %>
+            <p class = "alert alert-success ml15 mr15 text-center"><%- errors.msg %></p>
+         <% } %>
+      </div>
+        <!-- End Page Title Header Ends-->
+      <div class="midContentRightBar">
+      <div class="meddleContentSec agendaContentInfo">
+        <div class="eventInfoBox">
+            <div class="infoBoxContent">
+                <div class="boxContentRow">
+                <span class="infoTitle">Speaker Name</span>
+                <div class="infoBoxData">
+                    <input type="text" class="form-control" placeholder="Enter Speaker name" name="speaker_name" id="speaker_name" value="<%=data.speaker_name %>">
+                    <% if(typeof errors !== 'undefined' && typeof errors.speaker_name !== 'undefined') { %>
+                      <p class = "error"><%- errors["speaker_name"] %></p>
+                  <% } %> 
+                </div>
+                </div>
+                <div class="boxContentRow">
+                    <span class="infoTitle">D O B</span>
+                    <div class="infoBoxData calIcon">
+                        <input type="date" class="form-control"  placeholder="Select D O B" name="dob" id="dob" value="<%=data.dob %>">
+                        <% if(typeof errors !== 'undefined' && typeof errors.dob !== 'undefined') { %>
+                          <p class = "error"><%- errors["dob"] %></p>
+                      <% } %> 
+                    </div>
+                </div>
+                <div class="boxContentRow">
+                    <span class="infoTitle">Email ID</span>
+                    <div class="infoBoxData">
+                        <input type="emai;" class="form-control" placeholder="Enter Email address" name="email" id="email" value="<%=data.email %>" disabled>
+                        <% if(typeof errors !== 'undefined' && typeof errors.email !== 'undefined') { %>
+                          <p class = "error"><%- errors["email"] %></p>
+                      <% } %> 
+                    </div>
+                </div>
+                <div class="boxContentRow">
+                    <span class="infoTitle">Contact Number</span>
+                    <div class="infoBoxData">
+                        <input type="text" class="form-control" id="" placeholder="Enter Contact" name="contact" id="contact" value="<%=data.contact %>">
+                        <% if(typeof errors !== 'undefined' && typeof errors.contact !== 'undefined') { %>
+                          <p class = "error"><%- errors["contact"] %></p>
+                      <% } %> 
+                    </div>
+                </div>
+                <div class="boxContentRow">
+                    <span class="infoTitle">Education</span>
+                    <div class="infoBoxData">
+                        <input type="text" class="form-control"  placeholder="Enter education" name="education" id="education" value="<%=data.education %>">
+                        <% if(typeof errors !== 'undefined' && typeof errors.education !== 'undefined') { %>
+                          <p class = "error"><%- errors["education"] %></p>
+                      <% } %> 
+                    </div>
+                </div>
+                <div class="boxContentRow">
+                    <span class="infoTitle">Address</span>
+                    <div class="infoBoxData">
+                        <input type="text" class="form-control" placeholder="Enter Address" name="address" id="address" value="<%=data.address %>">
+                        <% if(typeof errors !== 'undefined' && typeof errors.address !== 'undefined') { %>
+                          <p class = "error"><%- errors["address"] %></p>
+                      <% } %> 
+                    </div>
+                </div>
+                <hr />
+                <div class="boxContentRow">
+                    <span class="infoTitle">Company Name</span>
+                    <div class="infoBoxData">
+                        <input type="text" class="form-control" placeholder="Enter company name" name="company_name" id="company_name" value="<%=data.company_name %>">
+                        <% if(typeof errors !== 'undefined' && typeof errors.company_name !== 'undefined') { %>
+                          <p class = "error"><%- errors["company_name"] %></p>
+                      <% } %> 
+                    </div>
+                </div>
+                <div class="boxContentRow">
+                    <span class="infoTitle">Designation</span>
+                    <div class="infoBoxData">
+                        <input type="text" class="form-control" placeholder="Enter designation" name="designation" id="designation" value="<%=data.designation %>">
+                        <% if(typeof errors !== 'undefined' && typeof errors.designation !== 'undefined') { %>
+                          <p class = "error"><%- errors["designation"] %></p>
+                      <% } %> 
+                    </div>
+                </div>
+                <div class="boxContentRow">
+                    <span class="infoTitle">Company Type</span>
+                    <div class="infoBoxData infoSelectBox">
+                        <div class="form-group">
+                          <select name ="company_type" id="company_type" class="form-control" dir="rtl">
+                            <option value="">Select company type</option> 
+                            <% company_data.map((offer,i) => { %>
+                              <option  value="<%= offer._id %>"><%= offer.category %></option>
+                              <% }) %>
+                          </select>
+                          <% if(typeof errors !== 'undefined' && typeof errors.company_type !== 'undefined') { %>
+                            <p class = "error"><%- errors["company_type"] %></p>
+                        <% } %> 
+                        </div>
+                    </div>
+                </div>
+                <div class="boxContentRow">
+                    <span class="infoTitle">Total Experience</span>
+                    <div class="infoBoxData infoSelectBox">
+                        <div class="form-group">
+                          <select name="experience" id="experience" class="form-control" dir="rtl">
+                            <option value="">Select experience</option>  
+                            <option value="1-5 years">1 - 5 years</option>
+                            <option value="5-10 years">5 - 10 years</option>
+                            <option value="10+ years">10+ years</option>
+                          </select>
+                          <% if(typeof errors !== 'undefined' && typeof errors.experience !== 'undefined') { %>
+                            <p class = "error"><%- errors["experience"] %></p>
+                        <% } %> 
+                        </div>
+                    </div>
+                </div>
+                <hr />
+                <div class="boxContentRow">
+                    <span class="infoTitle">Linkedin</span>
+                    <div class="infoBoxData">
+                        <input type="text" class="form-control" placeholder="Enter linkedin url" name="linkedin_url" id="linkedin_url" value="<%=data.linkedin_url %>">
+                        <% if(typeof errors !== 'undefined' && typeof errors.linkedin_url !== 'undefined') { %>
+                          <p class = "error"><%- errors["linkedin_url"] %></p>
+                      <% } %> 
+                    </div>
+                </div>
+                <div class="boxContentRow">
+                    <span class="infoTitle">Facebook</span>
+                    <div class="infoBoxData">
+                        <input type="text" class="form-control" placeholder="Enter facebook url" name="facebook_url" id="facebook_url" value="<%=data.facebook_url%>">
+                        <% if(typeof errors !== 'undefined' && typeof errors.facebook_url !== 'undefined') { %>
+                          <p class = "error"><%- errors["facebook_url"] %></p>
+                      <% } %> 
+                    </div>
+                </div>
+                <div class="boxContentRow">
+                    <span class="infoTitle">Twitter</span>
+                    <div class="infoBoxData">
+                        <input type="text" class="form-control" id="" placeholder="Enter twitter url" name="twitter_url" id="twitter_url" value="<%=data.twitter_url %>">
+                        <% if(typeof errors !== 'undefined' && typeof errors.twitter_url !== 'undefined') { %>
+                          <p class = "error"><%- errors["twitter_url"] %></p>
+                      <% } %> 
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Add Speaker Image section -->
+        <div class="addEventImgSec addSpeakerSec">
+            <div class="infoBoxTitle">
+                <h3>Add Speaker Image</h3>
+            </div>
+              <div class="addEventImg addSpeakerImg">
+                  <div class="addEvntImgColl addEvntImg">
+                    <div class="addEImg">
+                      <input type="file" id="myFile" class="upload-img" name="image"  accept="image/*"> 
+  
+                      <input type="hidden" class="image_upload" name="image_data" value="<%=data.profile_img %>"/>
+                      <div class="addNewEvntImg">
+                          <h4>Profile Pic</h4>
+                          <img src="/assets/images/navIcon/addImg.png" />
+                      </div>
+                     
+                  </div>
+                </div>
+                <div class="addEvntImgColl">
+                  <div class="updateEventImg">
+                      <img class="display_img" src="/uploads/<%=data.profile_img %>" />
+                      <!-- <span class="itemTrash"><img src="/assets/images/navIcon/trash.png" /></span> -->
+                  </div>
+                </div>
+                <% if(typeof errors !== 'undefined' && typeof errors.image_data !== 'undefined') { %>
+                  <p class = "error"><%- errors["image_data"] %></p>
+              <% } %> 
+              </div>
+          </div>
+          <!-- End Images section -->
+      </div>
+        <!-- Start Bio of speaker section -->
+            <div class="eventInfoBox">
+                <div class="infoBoxTitle">
+                    <h3>Bio of speaker </h3>
+                </div>
+                <div class="infoBoxContent">
+                    <div class="boxContentTextArea">
+                        <div class="infoBoxData">
+                            <textarea class="form-control" rows="7" placeholder="Write Bio" name="bio" id="bio"><%=data.bio %></textarea>
+                            <% if(typeof errors !== 'undefined' && typeof errors.bio !== 'undefined') { %>
+                              <p class = "error"><%- errors["bio"] %></p>
+                          <% } %> 
+                        </div>
+                    </div>
+                </div>
+            </div>
+          <!-- End Bio of speaker section -->
+          <!-- Start Bio of speaker section -->
+            <div class="eventInfoBox">
+                <div class="infoBoxTitle">
+                    <h3>Session Topic</h3>
+                </div>
+                <div class="infoBoxContent">
+                    <div class="boxContentTextArea">
+                        <div class="infoBoxData">
+                            <textarea class="form-control" rows="7" placeholder="Write Topic"name="topic" id="topic"><%=data.topic %></textarea>
+                            <% if(typeof errors !== 'undefined' && typeof errors.topic !== 'undefined') { %>
+                              <p class = "error"><%- errors["topic"] %></p>
+                          <% } %> 
+                        </div>
+                    </div>
+                </div>
+            </div>
+          <!-- End Bio of speaker section -->
+  </div>
+      <!-- Submit Button -->
+      <div class="adminSubmitBtn">
+          <button type="submit" class="btn btn-primary adminPageBtn">Update speaker</button>
+      </div>
+      <!-- Submit Button -->
+  </div>
+  
+  </form>
+  
+
+  <script src="/assets/js/jquery-3.5.1.min.js"></script>   
+  <script>
+
+
+    $(function() {
+    
+      var temp="<%=data.company_type %>"; 
+      $("#company_type").val(temp);
+      var temp1="<%=data.experience %>"; 
+      $("#experience").val(temp1);
+      var temp2="<%=data.employees %>"; 
+    });
+    </script>

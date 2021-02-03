@@ -1,0 +1,121 @@
+<div class="adiminBodyContent">
+  <!-- Start Page Title Header Starts-->
+  <div class="headerTitle">
+    <h2>Event Detail</h2>
+  </div>
+  <!-- End Page Title Header Ends-->
+  <div class="midContentRightBar">
+    <div class="midContentRightBar">
+      <div class="meddleContentSec">
+        <div class="eventInfoBox">
+          <div class="infoBoxTitle">
+            <h3>Event Information</h3>
+          </div>
+          <div class="infoBoxContent">
+            <div class="boxContentRow">
+              <span class="infoTitle">Client Name</span>
+              <div class="infoBoxData ">
+                <%=data.client_id.company_name %>
+              </div>
+            </div>
+            <div class="boxContentRow">
+              <span class="infoTitle">Event Title</span>
+              <div class="infoBoxData">
+                <%=data.title %>
+              </div>
+            </div>
+            <div class="boxContentRow">
+              <span class="infoTitle">Site url</span>
+              <div class="infoBoxData">
+                <%=data.site_url %>
+              </div>
+            </div>
+            <div class="boxContentRow">
+              <span class="infoTitle">Start Date</span>
+              <div class="infoBoxData">
+                <%=moment(data.start_date).format('MMMM Do YYYY') %>
+              </div>
+            </div>
+            <div class="boxContentRow">
+              <span class="infoTitle">End Date</span>
+              <div class="infoBoxData">
+                <%=moment(data.end_date).format('MMMM Do YYYY') %>
+              </div>
+            </div>
+            <div class="boxContentRow">
+              <span class="infoTitle">Download</span>
+              <div class="infoBoxData">
+                <%if(data.download == true) { %>
+                Enable
+                <% } else{ %>
+                Disable
+                <% } %>
+              </div>
+            </div>
+            <!-- <div class="boxContentRow">
+              <span class="infoTitle">Dashboard</span>
+              <div class="infoBoxData">
+                <%if(data.dashboard =='dashboard_1') { %>
+                Dashboard 1
+                <% } else{ %>
+                Dashboard 2
+                <% } %>
+              </div>
+            </div> -->
+          </div>
+        </div>
+      </div>
+      <div class="eventInfoBox">
+        <div class="infoBoxTitle">
+          <h3>Enter Event Description</h3>
+        </div>
+        <div class="infoBoxContent">
+          <div class="boxContentTextArea">
+            <div class="infoBoxData">
+              <%=data.description %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Add Images section -->
+    <div class="addEventImgSec">
+      <div class="infoBoxTitle">
+        <h3>Event Images</h3>
+      </div>
+      <div class="addEventImg">
+        <% data.images.map((offer,i) => { %>
+        <div class="addEvntImgColl">
+          <div class="updateEventImg">
+            <img src="/uploads/<%=offer %>" />
+
+          </div>
+        </div>
+        <% }) %>
+      </div>
+    </div>
+    <!-- End Images section -->
+    <!-- Add video section -->
+    <div class="addEventImgSec">
+      <div class="infoBoxTitle">
+        <h3>Event Videos</h3>
+      </div>
+      <div class="addEventImg">
+        <% data.videos.map((offer,i) => { %>
+        <div class="addEvntImgColl">
+          <div class="addEventVideoSec">
+            <video class="eventVideo" id="myvid" controls>
+              <source src="/uploads/<%=offer %>" type="video/mp4">
+              Your browser does not support HTML5 video.
+            </video>
+            <!-- <button class="playpause" id="vidbutton"></button>  -->
+          </div>
+        </div>
+        <% }) %>
+      </div>
+    </div>
+    <!-- End Add video section -->
+  </div>
+  <!-- Submit Button -->
+
+</div>

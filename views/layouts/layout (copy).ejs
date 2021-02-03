@@ -1,0 +1,82 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Add Client</title>
+    <!-- plugins:css -->
+    
+    <link rel="stylesheet" href="/assets/vendors/iconfonts/mdi/css/materialdesignicons.min.css">
+    <link rel="stylesheet" href="/assets/vendors/iconfonts/ionicons/css/ionicons.css">
+    <link rel="stylesheet" href="/assets/vendors/iconfonts/typicons/src/font/typicons.css">
+    <link rel="stylesheet" href="/assets/vendors/iconfonts/flag-icon-css/css/flag-icon.min.css">
+    <link rel="stylesheet" href="/assets/vendors/css/vendor.bundle.base.css">
+    <link rel="stylesheet" href="/assets/vendors/css/vendor.bundle.addons.css">
+    <link rel="stylesheet" href="/assets/css/shared/custom.css">
+    
+    <!-- endinject -->
+    <!-- plugin css for this page -->
+    <!-- End plugin css for this page -->
+    <!-- inject:css -->
+    <link rel="stylesheet" href="/assets/css/shared/style.css">
+    <!-- endinject -->
+    <!-- Layout styles -->
+    <link rel="stylesheet" href="/assets/css/demo_1/style.css">
+    <link rel="stylesheet" href="/assets/custom.css">
+
+    <!-- End Layout styles -->
+    <link rel="shortcut icon" href="/assets/images/favicon.png" />
+  </head>
+  <body>
+    <div class="container-scroller adminContentArea">
+      <!-- partial:partials/_navbar.html -->
+      <%-partial('../partials/header')%>
+      
+       <!-- partial -->
+       <div class="container-fluid page-body-wrapper">
+        <%- partial('../partials/sidebar') %>
+        <%-body%>
+
+        <%- partial('../partials/footer') %>
+
+      </div>
+      <!-- main-panel ends -->
+    </div>
+    <!-- page-body-wrapper ends -->
+  </div> 
+    
+<!-- ======= Video Play button ======= --> 
+<script>
+var ppbutton = document.getElementById("vidbutton");
+ppbutton.addEventListener("click", playPause);
+myVideo = document.getElementById("myvid");
+function playPause() { 
+  if (myVideo.paused) {
+      myVideo.play();
+      ppbutton.innerHTML = "";
+      }
+  else  {
+      myVideo.pause(); 
+      ppbutton.innerHTML = "";
+      }
+}      
+</script>  
+  <!-- container-scroller -->
+  <!-- plugins:js -->
+  <script src="/assets/vendors/js/vendor.bundle.base.js"></script>
+  <script src="/assets/vendors/js/vendor.bundle.addons.js"></script>
+  <script src="/assets/js/custom.js"></script>
+  <!-- endinject -->
+  <!-- Plugin js for this page-->
+  <!-- End plugin js for this page-->
+  <!-- inject:js -->
+  <script src="/assets/js/shared/off-canvas.js"></script>
+  <script src="/assets/js/shared/misc.js"></script>
+  <!-- endinject -->
+  <!-- Custom js for this page-->
+  <script src="/assets/js/demo_1/dashboard.js"></script>
+  <!-- End custom js for this page-->
+</body>
+</html>

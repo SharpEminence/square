@@ -1,0 +1,88 @@
+
+
+<div class="content-wrapper">
+  <!-- Page Title Header Starts-->
+  <div class="headerTitle">
+      <h2>Agenda Category List</h2>    
+      <% if(typeof errors !== 'undefined' && typeof errors.message !== 'undefined') { %>
+        <p class = "alert alert-danger ml15 mr15 text-center"><%- errors.message %></p>
+     <% } %>  
+     <% if(typeof errors !== 'undefined' && typeof errors.msg !== 'undefined') { %>
+        <p class = "alert alert-success ml15 mr15 text-center"><%- errors.msg %></p>
+     <% } %>
+  </div>
+  <!-- Page Title Header Ends-->
+<div class="midContentRightBar">
+    <div class="adminListPage">
+        <div class="adminListTable">
+            <div class="tableSearchSort">
+              <div class="tableSearch">
+              <!-- <span class="searchIcon">
+                  <img src="../assets/images/navIcon/searchIcon.png" />
+              </span>
+              <input type="search" class="form-control" placeholder="Search event" aria-controls=""> -->
+          </div>
+                <div class="tableSort">
+                   
+                    <div class="addEventBtn">
+                      <a href="/agenda/add-category"><button type="button" class="btn btn-primary adEventBtn">Add Category</button></a>
+                    </div>
+                </div>
+            </div>
+            <div class="adminTableContent">
+                <table id="example" class="eventDataTable table table-striped table-bordered dt-responsive nowrap" width="100%">
+                    <thead>
+                      <tr>
+                        <th class="th-sm">Sr.No.</th>
+                        <th class="th-sm">Category Name</th>
+                        <th class="th-sm">Date</th>
+                        <th class="th-sm">Action</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <% if(data.length > 0) {%>
+                        <% data.map((offer,i) => { %>
+                    <tr>
+                    <td><%= i+1 %></td>
+                    <td><%= offer.category %></td>
+                    <td><%= moment(offer.created_at).format('MMMM Do YYYY') %></td>
+
+                    <td>
+                      <div class="tableEditDelete">
+                        <span class="actionEdit"><a href="/agenda/edit-category/<%= offer._id %>"><i class="fa fa-pencil"></i></a></span>
+                        <!-- <span class="actionDelete"><a href="#"><i class="fa fa-trash"></i></a></span> -->
+                      </div>
+                      <span>
+                    <!-- <a href="/edit-client/<%= offer._id %>" data-toggle="tooltip" data-placement="top" title="Edit">
+                         <i class="menu-icon typcn typcn-pencil"></i> Edit</a></span></td>    -->
+                    </tr>
+                    <% }) %>
+                    <% } %>
+                     
+                      <!-- <tr>
+                        <td>06</td>
+                        <td>Beauty & Glam</td>
+                        <td>James Smith</td>
+                        <td>clientname@gmail.com</td>
+                        <td>+02 123 456 7890</td>
+                        <td>799 E DrangramSuite 5A Tucson AZ 85705</td>
+                        <td>
+                            <div class="tableEditDelete">
+                              <span class="actionEdit"><a href="#"><i class="fa fa-pencil"></i></a></span>
+                              <span class="actionDelete"><a href="#"><i class="fa fa-trash"></i></a></span>
+                            </div>
+                        </td>
+                      </tr> -->
+                    </tbody>
+                </table>
+                
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+<!-- content-wrapper ends -->
+
+          
+      <!-- content-wrapper ends -->
+

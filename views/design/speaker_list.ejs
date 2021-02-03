@@ -1,0 +1,88 @@
+
+
+    <div class="adiminBodyContent">
+      <!-- Page Title Header Starts-->
+      <div class="headerTitle">
+          <h2>Speaker List</h2>    
+          <% if(typeof errors !== 'undefined' && typeof errors.message !== 'undefined') { %>
+            <p class = "alert alert-danger ml15 mr15 text-center"><%- errors.message %></p>
+         <% } %>  
+         <% if(typeof errors !== 'undefined' && typeof errors.msg !== 'undefined') { %>
+            <p class = "alert alert-success ml15 mr15 text-center"><%- errors.msg %></p>
+         <% } %>
+      </div>
+      
+              <!-- End Page Title Header Ends-->
+            <div class="midContentRightBar">
+                <div class="adminListPage">
+                <div class="adminListTable">
+                  <div class="tableSearchSort">
+                    <div class="tableSearch">
+                    <!-- <span class="searchIcon">
+                        <img src="../assets/images/navIcon/searchIcon.png" />
+                    </span>
+                    <input type="search" class="form-control" placeholder="Search event" aria-controls=""> -->
+                </div>
+                      <div class="tableSort">
+                         
+                          <div class="addEventBtn">
+                            <a href="/add-speaker/<%=event_id%>"><button type="button" class="btn btn-primary adEventBtn">Add Speaker</button></a>
+                          </div>
+                      </div>
+                  </div>
+                    <div class="adminTableContent">
+                        <div class="listingTable">
+                          <table id="example" class="eventDataTable table table-striped table-bordered dt-responsive nowrap" width="100%">
+                            <thead>
+                              <tr>
+                                <th class="th-sm">Sr.No.</th>
+                                      <th class="th-sm">Name</th>
+                                      <th class="th-sm">DOB</th>
+                                      <th class="th-sm">Email ID</th>
+                                      <th class="th-sm">Contact No.</th>
+                                      <th class="th-sm">Education</th>
+                                      <th class="th-sm">Action</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+          
+                              <% if(data.length > 0) {%>
+                                <% data.map((offer,i) => { %>
+                            <tr>
+                              <td><%= i+1 %></td>
+                              <td><%= offer.speaker_name %></td>
+                              <td><%= moment(offer.dob).format('MMMM Do YYYY') %></td>
+                              <td><%= offer.email %></td>
+                              <td><%= offer.contact %></td>
+                              <td><%= offer.education %></td>
+
+                           
+                            <td>
+                              <div class="tableEditDelete">
+                                <span class="actionEdit"><a href="/edit-speaker/<%= offer._id %>/<%=event_id%>"><i class="fa fa-pencil"></i></a></span>
+                                <!-- <span class="actionDelete"><a href="#"><i class="fa fa-trash"></i></a></span> -->
+                              </div>
+                              <span>
+                            <!-- <a href="/edit-client/<%= offer._id %>" data-toggle="tooltip" data-placement="top" title="Edit">
+                                 <i class="menu-icon typcn typcn-pencil"></i> Edit</a></span></td>    -->
+                           
+                               </td>   
+                            </tr>
+                            <% }) %>
+                            <% } %>
+                              
+                             
+                            
+                            </tbody>
+                        </table>
+                        </div>
+                     
+                    </div>
+                </div>
+            </div>
+            </div>
+        </div>
+      
+      <!-- content-wrapper ends -->
+      
+      

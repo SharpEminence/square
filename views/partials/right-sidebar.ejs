@@ -1,0 +1,111 @@
+
+  <!---- Start Right Side Bar ----->
+  <div class="rightSideBar" id="mySidenav" style="display: block;">
+    <ul class="rightSideNav">
+        <li>
+            <div class="rightMenu <% if(right_active == 'Speaker') { %>active<% } %>"><a href="/speaker-list/<%=event_id%>">Speaker</a></div>
+            <div class="rightIcon"><a href="/add-speaker/<%=event_id%>">
+                <img src="/assets/images/navIcon/rightBarPlus.png" /></a>
+            </div>
+        </li>
+        <li>
+            <div class="rightMenu <% if(right_active == 'Sponsor') { %>active<% } %>"><a href="/sponser-list/<%=event_id%>">Partner</a></div>
+            <div class="rightIcon"><a href="/add-sponser/<%=event_id%>">
+                <img src="/assets/images/navIcon/rightBarPlus.png" /></a>
+            </div>
+        </li>
+        <li>
+            <div class="rightMenu <% if(right_active == 'Hour') { %>active<% } %>"><a href="/hour-list/<%=event_id%>">Booth Hours</a></div>
+            <div class="rightIcon"><a href="/add-hour/<%=event_id%>">
+                <img src="/assets/images/navIcon/rightBarPlus.png" /></a>
+            </div>
+        </li>
+        <li>
+            <div class="rightMenu <% if(right_active == 'User') { %>active<% } %>"><a href="/user-list/<%=event_id%>">Users</a></div>
+            <div class="rightIcon">
+                <!-- <a href="/add-sponser/<%=event_id%>">
+                <img src="/assets/images/navIcon/rightBarPlus.png" /></a> -->
+            </div>
+        </li>
+        <li>
+            <div class="rightMenu <% if(right_active == 'Agenda') { %>active<% } %>"><a href="/agenda-list/<%=event_id%>">Agenda</a></div>
+            <div class="rightIcon"><a href="/add-agenda/<%=event_id%>">
+                <img src="/assets/images/navIcon/rightBarPlus.png" /></a>
+            </div>
+        </li>
+
+        <li>
+            <div class="rightMenu <% if(right_active == 'demand') { %>active<% } %>"><a href="/demand-list/<%=event_id%>">On-Demand</a></div>
+            <div class="rightIcon"><a href="/add-demand/<%=event_id%>">
+                <img src="/assets/images/navIcon/rightBarPlus.png" /></a>
+            </div>
+        </li>
+
+        <li>
+            <div class="rightMenu <% if(right_active == 'president') { %>active<% } %>"><a href="/president-list/<%=event_id%>">President Club</a></div>
+            <div class="rightIcon"><a href="/add-president/<%=event_id%>">
+                <img src="/assets/images/navIcon/rightBarPlus.png" /></a>
+            </div>
+        </li>
+
+        <li>
+            <div class="rightMenu <% if(right_active == 'Notification') { %>active<% } %>"><a href="/notification-list/<%=event_id%>">Notifications</a></div>
+            <div class="rightIcon"><a href="/add-notification/<%=event_id%>">
+                <img src="/assets/images/navIcon/rightBarPlus.png" /></a>
+            </div>
+        </li>
+        <!-- <li>
+            <div class="rightMenu <% if(right_active == 'Question') { %>active<% } %>"><a href="/question-list/<%=event_id%>">Sign up Questions</a></div>
+            <div class="rightIcon"><a href="/add-question/<%=event_id%>">
+                <img src="/assets/images/navIcon/rightBarPlus.png" /></a>
+            </div>
+        </li> -->
+        <!-- <li>
+            <div class="rightMenu <% if(right_active == 'Poll') { %>active<% } %>"><a href="/poll-list/<%=event_id%>">Polling</a></div>
+            <div class="rightIcon"><a href="/add-poll/<%=event_id%>">
+                <img src="/assets/images/navIcon/rightBarPlus.png" /></a>
+            </div>
+        </li> -->
+        <li>
+            <div class="rightMenu <% if(right_active == 'Summit') { %>active<% } %>"><a href="/summit-list/<%=event_id%>">Summit Quest</a></div>
+            <div class="rightIcon">
+             
+            </div>
+        </li>
+        <li>
+            <div class="rightMenu <% if(right_active == 'Broadcast') { %>active<% } %>"><a href="/broadcast-list/<%=event_id%>">Broadcast Message</a></div>
+            <div class="rightIcon"><a href="/add-broadcast/<%=event_id%>">
+                <img src="/assets/images/navIcon/rightBarPlus.png" /></a>
+            </div>
+        </li>
+        <!-- <li>
+            <div class="rightMenu <% if(right_active == 'Survey') { %>active<% } %>"><a href="/survey-list/<%=event_id%>">Survey Questions</a></div>
+            <div class="rightIcon"><a href="/add-survey/<%=event_id%>">
+                <img src="/assets/images/navIcon/rightBarPlus.png" /></a>
+            </div>
+        </li> -->
+        <!-- <li>
+            <div class="rightMenu <% if(right_active == 'Faq') { %>active<% } %>"><a href="/faq-list/<%=event_id%>">Faqs</a></div>
+            <div class="rightIcon"><a href="/add-faq/<%=event_id%>">
+                <img src="/assets/images/navIcon/rightBarPlus.png" /></a>
+            </div>
+        </li>
+        <li>
+            <div class="rightMenu <% if(right_active == 'News') { %>active<% } %>"><a href="/news-list/<%=event_id%>">News</a></div>
+            <div class="rightIcon"><a href="/add-news/<%=event_id%>">
+                <img src="/assets/images/navIcon/rightBarPlus.png" /></a>
+            </div>
+        </li> -->
+        <!-- <li>
+            <div class="rightMenu  <% if(right_active == 'Design') { %>active<% } %>"><a href="/edit-design/<%=event_id%>">Event Design</a></div>
+            <div class="rightIcon">
+                <a href="/design-list/<%=event_id%>">
+                <img src="/assets/images/navIcon/rightBarPlus.png" /></a>
+            </div>
+        </li>
+        <li>
+            <div class="rightMenu"><a href="#">Event Statistics</a></div>
+        </li> -->
+    </ul>
+</div>
+<!---- End Right Side Bar ----->
