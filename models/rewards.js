@@ -11,7 +11,7 @@ var rewardsSchema = new Schema(
     userId: { type: Schema.Types.ObjectId, ref: "User" },
     rewardCategory: String,
     rewardPoints: { type: Number, default: 0 },
-    rewardFor: { type: Schema.Types.ObjectId },
+    rewardFor: { type: Schema.Types.ObjectId, ref: "Agenda" },
     isDeleted: { type: Boolean, default: false },
     created_at: Date,
     updated_at: Date,

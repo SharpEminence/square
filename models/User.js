@@ -52,43 +52,43 @@ var userSchema = new Schema(
     twitter_url: String,
     hyperlink1: {
       type: String,
-      default: null
+      default: null,
     },
     hyperlink2: {
       type: String,
-      default: null
+      default: null,
     },
     hyperlink3: {
       type: String,
-      default: null
+      default: null,
     },
     hyperlink4: {
       type: String,
-      default: null
+      default: null,
     },
     hyperlink5: {
       type: String,
-      default: null
+      default: null,
     },
     hyperlink6: {
       type: String,
-      default: null
+      default: null,
     },
     hyperlink7: {
       type: String,
-      default: null
+      default: null,
     },
     hyperlink8: {
       type: String,
-      default: null
+      default: null,
     },
     hyperlink9: {
       type: String,
-      default: null
+      default: null,
     },
     hyperlink10: {
       type: String,
-      default: null
+      default: null,
     },
     verification_code: String,
     otp: { type: String, default: null },

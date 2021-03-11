@@ -29,7 +29,7 @@ var AgendaFavourite = require("./../../../../models/AgendaFavourite");
 var Agenda = require("./../../../../models/Agenda");
 
 var Rewards = require("./../../../../models/rewards");
-
+var CompanyCategory = require("./../../../../models/CompanyCategory");
 
 module.exports.JitsiAuth = async (req, res) => {
   //PLEASE USE THE BELOW VARIABLE IF WANT TO USE ANY LEAVING EMPTY WILL AUTO GENERATE
@@ -67,6 +67,8 @@ module.exports.JitsiAuth = async (req, res) => {
     data: data,
   });
 };
+
+
 module.exports.login = async (req, res) => {
   var params = req.body;
   var privateKey = "vnrvjrekrke";
@@ -105,6 +107,7 @@ module.exports.login = async (req, res) => {
     });
   }
 };
+
 
 module.exports.createUser = async (req, res) => {
   if (!req.body) {
@@ -978,11 +981,58 @@ module.exports.csvUpload = async (req, res) => {
 
 
 module.exports.csvExport = async (req, res) => {
-  
+//   console.log('helloooooooooooooooooooooooooooooooooooooooooo');
+//   try {
+//   let hotspot_data = await Rewards.find({rewardCategory: { $eq: "booth" }}).populate('userId').sort({rewardFor: 1}).exec();
+//     var user_array1 = [];
+
+
     
+//     var user_array = [{ "User Name": "User Name","Booth Name": "Booth Name",  "Date": "Date" ,  "Time": "Time"}];
+
+//    for(let val of hotspot_data){
+//     let user_array2 = [];
+//     if(val.userId)
+//     {
+//       // console.log(val.agenda);
+    
+//         var agenda_data =  await CompanyCategory.findOne({
+//             _id: val.rewardFor,
+//           }).exec();
+//           if(agenda_data)
+//           {
+//             user_array.push({"User Name":val.userId.first_name+' '+val.userId.last_name,"Booth Name":agenda_data.name,"Date": moment.utc(val.created_at).tz("America/Los_Angeles").format("MM-DD-YYYY"),  "Time": moment.utc(val.created_at).tz("America/Los_Angeles").format("hh:mm A")});
+//             // user_array.push({"User Name":val.userId.first_name+' '+val.userId.last_name,"Agenda Title":agenda_data.title.split("|")[0],"Date": moment.utc(val.created_at).tz("America/Los_Angeles").format("MM-DD-YYYY"),  "Time": moment.utc(val.created_at).tz("America/Los_Angeles").format("hh:mm A"),"Agenda Time":agenda_data.title.split("|")[1]});
+//           }
+//     }  
+//   };
+
+
+//   var ws = fs.createWriteStream(process.env.PUBLIC_URL + "data.csv");
+//   fastcsv.write(user_array,{hearders:true})
+//   .on("finish",function(){
+//     return res.json({
+//       status: 200,
+//       data: process.env.Admin_URL+"data.csv",
+  
+//       message: "Users added successfully",
+//     });
+    
+//   }).pipe(ws);
+// } catch (err) {
+//   return res.json({
+//     status: 500,
+//     message: "Something went wrong!",
+//     err: err,
+//   });
+// }
+
+
+
+
   try {
     let hotspot_data = await hotspotTracker.find().populate('userId').exec();
-    console.log("aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa");
+    console.log("aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa");
     console.log(hotspot_data);
     console.log(user_array);
     var user_array = [{ "First Name": "First Name",      "Last Name": "Last Name",  "Email": "Email" ,  "Hotspot": "Hotspot","Date": "Date","Time": "Time"}];
@@ -1011,6 +1061,11 @@ fastcsv.write(user_array,{hearders:true})
     err: err,
   });
 }
+
+
+
+
+
 
 
   // const leaderBoardData = await Rewards.aggregate([

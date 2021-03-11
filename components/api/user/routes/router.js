@@ -8,8 +8,7 @@ const faqController = require("./../controller/faqController");
 const demandController = require("./../controller/demandController");
 const presidentController = require("./../controller/presidentController");
 const suggestMeController = require("./../controller/suggestedMeController");
-const rewardsController =  require("./../controller/rewardsController")
-
+const rewardsController = require("./../controller/rewardsController");
 const { check } = require("express-validator");
 const token = require("./../../../../utilities/verify_token");
 const multer = require("multer");
@@ -34,7 +33,10 @@ module.exports = (router) => {
     "/api/login",
     [
       check("email").not().isEmpty().withMessage("Email field is required"),
-      check("eventId").not().isEmpty().withMessage("Something went wrong. Please try again later."),
+      check("eventId")
+        .not()
+        .isEmpty()
+        .withMessage("Something went wrong. Please try again later."),
       check("password")
         .not()
         .isEmpty()
@@ -77,11 +79,7 @@ module.exports = (router) => {
     userController.updateProfile
   );
 
-  router.post(
-    "/api/base-image",
-    userController.saveBase64Image
-  );
-
+  router.post("/api/base-image", userController.saveBase64Image);
 
   router.post(
     "/api/upload",
@@ -95,11 +93,7 @@ module.exports = (router) => {
     userController.csvUpload
   );
 
-
-  router.post(
-    "/api/export-csv/:id",
-    userController.csvExport
-  );
+  router.post("/api/export-csv/:id", userController.csvExport);
   router.post("/api/add-time", userController.addtime);
 
   router.get("/api/timezones", commonController.getAllTimezones);
@@ -142,9 +136,12 @@ module.exports = (router) => {
 
   router.get("/api/faq/:id", token.verifyToken, faqController.getFaqs);
   router.get("/api/demand/:id", token.verifyToken, demandController.getDemand);
-  router.get("/api/president/:id", token.verifyToken, presidentController.getPresident);
+  router.get(
+    "/api/president/:id",
+    token.verifyToken,
+    presidentController.getPresident
+  );
 
-  
   router.post("/api/expo/:id", token.verifyToken, expoController.getAgenda);
   router.post("/api/booths/:id", token.verifyToken, expoController.getBooths);
   router.post(
@@ -251,22 +248,26 @@ module.exports = (router) => {
     "/api/quest/fetchPoints/:userId",
     // token.verifyToken,
     rewardsController.fetchPoints
-  )
+  );
 
   router.get(
     "/api/quest/fetchLeaderboard/:userId",
     token.verifyToken,
     rewardsController.fetchLeaderBoard
-  )
+  );
 
   router.post(
     "/api/fetchUserHaveSameInterest",
     token.verifyToken,
     userController.fetchUserHaveSameInterest
   );
-  router.get( "/api/vox-auth", agendaController.voxAuth);
-  router.get( "/api/vox-conference-data", agendaController.voxConferenceData);
-  router.post( "/api/tag-agenda",token.verifyToken, agendaController.GetTagAgenda);
+  router.get("/api/vox-auth", agendaController.voxAuth);
+  router.get("/api/vox-conference-data", agendaController.voxConferenceData);
+  router.post(
+    "/api/tag-agenda",
+    token.verifyToken,
+    agendaController.GetTagAgenda
+  );
 
   router.get(
     "/api/fetch/adminData",
@@ -298,11 +299,7 @@ module.exports = (router) => {
     expoController.boothDetail
   );
 
-  router.post(
-    "/api/logout",
-    token.verifyToken,
-    userController.logout
-  );
+  router.post("/api/logout", token.verifyToken, userController.logout);
 
   router.post(
     "/api/saveHotspot",
@@ -322,11 +319,5 @@ module.exports = (router) => {
     userController.CheckNotification
   );
 
-  router.post(
-    "/api/check-user",
-    userController.UserCheck
-  );
-
-
-
+  router.post("/api/check-user", userController.UserCheck);
 };

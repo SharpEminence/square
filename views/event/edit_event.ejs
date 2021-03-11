@@ -63,7 +63,7 @@
               <div class="infoBoxData">
                 <input type="date" class="form-control" name="start_date"
                   value="<%=moment(data.start_date).format('YYYY-MM-DD') %>" id="start_date"
-                  placeholder="Enter start date" min="<%=currentDate %>">
+                  placeholder="Enter start date" >
                 <% if(typeof errors !== 'undefined' && typeof errors.start_date !== 'undefined') { %>
                 <p class="error"><%- errors["start_date"] %></p>
                 <% } %>

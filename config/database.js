@@ -1,5 +1,5 @@
 var mongoose = require('mongoose');
-mongoose.connect('mongodb://beautyapp_user:L1o0KHt54#whtt@172.31.21.96:27017/beautyapp2020',{
+mongoose.connect('mongodb://127.0.0.1:27017/SQUARE_DATABASE',{
 	useNewUrlParser: true,
 	useUnifiedTopology: true
 });
